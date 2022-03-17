@@ -14,6 +14,9 @@
 		4065716827CE96DE003897A0 /* GBShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065716727CE96DE003897A0 /* GBShopTests.swift */; };
 		4065717227CE96DE003897A0 /* GBShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065717127CE96DE003897A0 /* GBShopUITests.swift */; };
 		4065717427CE96DE003897A0 /* GBShopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065717327CE96DE003897A0 /* GBShopUITestsLaunchTests.swift */; };
+		407BF33627E3B82000C17642 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 407BF33527E3B82000C17642 /* Swinject */; };
+		407BF33C27E3D05300C17642 /* ContainerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BF33B27E3D05300C17642 /* ContainerAssembly.swift */; };
+		407BF33E27E3D31200C17642 /* RequestSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BF33D27E3D31200C17642 /* RequestSession.swift */; };
 		408DA72427DE9C6D00B18B4D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 408DA72327DE9C6D00B18B4D /* Alamofire */; };
 		408DA72727DE9E0700B18B4D /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408DA72627DE9E0700B18B4D /* AbstractErrorParser.swift */; };
 		408DA72927DE9E3B00B18B4D /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408DA72827DE9E3B00B18B4D /* ErrorParser.swift */; };
@@ -63,6 +66,8 @@
 		4065716D27CE96DE003897A0 /* GBShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GBShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4065717127CE96DE003897A0 /* GBShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopUITests.swift; sourceTree = "<group>"; };
 		4065717327CE96DE003897A0 /* GBShopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		407BF33B27E3D05300C17642 /* ContainerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerAssembly.swift; sourceTree = "<group>"; };
+		407BF33D27E3D31200C17642 /* RequestSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSession.swift; sourceTree = "<group>"; };
 		408DA72627DE9E0700B18B4D /* AbstractErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
 		408DA72827DE9E3B00B18B4D /* ErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
 		408DA72A27DE9EAA00B18B4D /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				408DA72427DE9C6D00B18B4D /* Alamofire in Frameworks */,
+				407BF33627E3B82000C17642 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +171,7 @@
 				408DA72A27DE9EAA00B18B4D /* DataRequest.swift */,
 				408DA72C27DEA02B00B18B4D /* AbstractRequestFactory.swift */,
 				408DA72E27DEA05F00B18B4D /* RequestRouter.swift */,
+				407BF33D27E3D31200C17642 /* RequestSession.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -231,6 +238,7 @@
 		40E8545A27CEA83D0079C09D /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
+				407BF33B27E3D05300C17642 /* ContainerAssembly.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 			name = GBShop;
 			packageProductDependencies = (
 				408DA72327DE9C6D00B18B4D /* Alamofire */,
+				407BF33527E3B82000C17642 /* Swinject */,
 			);
 			productName = GBShop;
 			productReference = 4065714A27CE96DD003897A0 /* GBShop.app */;
@@ -347,6 +356,7 @@
 			mainGroup = 4065714127CE96DD003897A0;
 			packageReferences = (
 				408DA72227DE9C6D00B18B4D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				407BF33427E3B82000C17642 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 4065714B27CE96DD003897A0 /* Products */;
 			projectDirPath = "";
@@ -405,8 +415,10 @@
 				40E09AA427E122DA00804CAF /* Register.swift in Sources */,
 				40E09AA227E11C3E00804CAF /* UserData.swift in Sources */,
 				4065715027CE96DD003897A0 /* SceneDelegate.swift in Sources */,
+				407BF33E27E3D31200C17642 /* RequestSession.swift in Sources */,
 				40E09A9827E1192800804CAF /* RegisterRequestFactory.swift in Sources */,
 				40E09AA627E122E900804CAF /* ChangeData.swift in Sources */,
+				407BF33C27E3D05300C17642 /* ContainerAssembly.swift in Sources */,
 				408DA72D27DEA02B00B18B4D /* AbstractRequestFactory.swift in Sources */,
 				408DA72927DE9E3B00B18B4D /* ErrorParser.swift in Sources */,
 			);
@@ -746,6 +758,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		407BF33427E3B82000C17642 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.8.0;
+			};
+		};
 		408DA72227DE9C6D00B18B4D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -757,6 +777,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		407BF33527E3B82000C17642 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 407BF33427E3B82000C17642 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
 		408DA72327DE9C6D00B18B4D /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 408DA72227DE9C6D00B18B4D /* XCRemoteSwiftPackageReference "Alamofire" */;

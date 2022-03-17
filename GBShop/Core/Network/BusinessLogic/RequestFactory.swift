@@ -6,35 +6,25 @@
 //
 
 import Foundation
-import Alamofire
+import Swinject
 
 class RequestFactory {
-    func makeErrorParser() -> AbstractErrorParser {
-        return ErrorParser()
+    
+    let container: Container
+    
+    init(container: Container){
+        self.container = container
     }
     
-    lazy var commonSession: Session = {
-        let configuration = URLSessionConfiguration.default
-        configuration.httpShouldSetCookies = false
-        configuration.headers = .default
-        let manager = Session(configuration: configuration)
-        return manager
-    }()
-    
-    let sessionQueue = DispatchQueue.global(qos: .utility)
-    
     func makeAuthRequestFaсtory() -> AuthRequestFactory {
-        let errorParser = makeErrorParser()
-        return Auth(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+        return container.resolve(AuthRequestFactory.self)!
     }
     
     func makeRegisterRequestFaсtory() -> RegisterRequestFactory {
-        let errorParser = makeErrorParser()
-        return Register(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+        return container.resolve(RegisterRequestFactory.self)!
     }
     
     func makeChangeDataRequestFaсtory() -> ChangeDataRequestFactory {
-        let errorParser = makeErrorParser()
-        return ChangeData(errorParser: errorParser, sessionManager: commonSession, queue: sessionQueue)
+        return container.resolve(ChangeDataRequestFactory.self)!
     }
 }
