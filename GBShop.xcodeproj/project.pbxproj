@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4000252227F0808300163BE9 /* RegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000252127F0808300163BE9 /* RegisterTests.swift */; };
+		4000252427F0809800163BE9 /* ChangeDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000252327F0809800163BE9 /* ChangeDataTests.swift */; };
 		4065714E27CE96DD003897A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065714D27CE96DD003897A0 /* AppDelegate.swift */; };
 		4065715027CE96DD003897A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065714F27CE96DD003897A0 /* SceneDelegate.swift */; };
 		4065715A27CE96DE003897A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4065715927CE96DE003897A0 /* Assets.xcassets */; };
@@ -35,6 +37,7 @@
 		40E09AA227E11C3E00804CAF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E09AA127E11C3E00804CAF /* UserData.swift */; };
 		40E09AA427E122DA00804CAF /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E09AA327E122DA00804CAF /* Register.swift */; };
 		40E09AA627E122E900804CAF /* ChangeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E09AA527E122E900804CAF /* ChangeData.swift */; };
+		40F43F4927EFB4210075D912 /* AuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F43F4827EFB4210075D912 /* AuthTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4000252127F0808300163BE9 /* RegisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTests.swift; sourceTree = "<group>"; };
+		4000252327F0809800163BE9 /* ChangeDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDataTests.swift; sourceTree = "<group>"; };
 		4065714A27CE96DD003897A0 /* GBShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4065714D27CE96DD003897A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4065714F27CE96DD003897A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +90,7 @@
 		40E09AA127E11C3E00804CAF /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		40E09AA327E122DA00804CAF /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		40E09AA527E122E900804CAF /* ChangeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeData.swift; sourceTree = "<group>"; };
+		40F43F4827EFB4210075D912 /* AuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,7 @@
 		4065714C27CE96DD003897A0 /* GBShop */ = {
 			isa = PBXGroup;
 			children = (
+				40F43F4727EFB3FA0075D912 /* BusinessLogic */,
 				40E8545527CEA44D0079C09D /* App */,
 				40E8545627CEA4670079C09D /* Core */,
 				40E8545727CEA46F0079C09D /* Resources */,
@@ -149,6 +156,9 @@
 			isa = PBXGroup;
 			children = (
 				4065716727CE96DE003897A0 /* GBShopTests.swift */,
+				40F43F4827EFB4210075D912 /* AuthTests.swift */,
+				4000252127F0808300163BE9 /* RegisterTests.swift */,
+				4000252327F0809800163BE9 /* ChangeDataTests.swift */,
 			);
 			path = GBShopTests;
 			sourceTree = "<group>";
@@ -195,7 +205,6 @@
 			children = (
 				4065714D27CE96DD003897A0 /* AppDelegate.swift */,
 				4065714F27CE96DD003897A0 /* SceneDelegate.swift */,
-				40E8545C27CEA84F0079C09D /* BusinessLogic */,
 				40E8545B27CEA8480079C09D /* Entity */,
 				40E8545A27CEA83D0079C09D /* Assembly */,
 				40E8545927CEA82D0079C09D /* Flows */,
@@ -255,7 +264,7 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		40E8545C27CEA84F0079C09D /* BusinessLogic */ = {
+		40F43F4727EFB3FA0075D912 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -429,6 +438,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4065716827CE96DE003897A0 /* GBShopTests.swift in Sources */,
+				40F43F4927EFB4210075D912 /* AuthTests.swift in Sources */,
+				4000252227F0808300163BE9 /* RegisterTests.swift in Sources */,
+				4000252427F0809800163BE9 /* ChangeDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
