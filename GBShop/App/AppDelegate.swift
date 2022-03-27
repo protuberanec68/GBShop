@@ -25,50 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func testRequests() {
-        let auth = requestFactory.makeAuthRequestFaсtory()
-        auth.login(userName: "Somebody", password: "mypassword") {
-            response in
-            switch response.result { case .success(let login):
-                print(login)
-                print("Login successed")
+        let register = requestFactory.makeCatalogDataRequestFaсtory()
+        register.getCatalogData(idCategory: 1) {
+            request in
+            switch request.result {
+            case .success(let data):
+                print(data.products)
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
         
-        auth.logout(id: 123) {
-            response in
-            switch response.result { case .success(let logout):
-                print(logout)
-                print("Logout successed")
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-        
-        let userData = UserData(id: 123, username: "Igor", password: "qwerty", email: "123@gmail.com", gender: .m, creditCard: "1234", bio: "Hello, World!")
-        
-        let register = requestFactory.makeRegisterRequestFaсtory()
-        register.register(userData: userData) {
-            response in
-            switch response.result { case .success(let register):
-                print(register)
-                print(register.userMessage)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-        
-        let changeData = requestFactory.makeChangeDataRequestFaсtory()
-        changeData.changeUserData(userData: userData) {
-            response in
-            switch response.result { case .success(let changeData):
-                print(changeData)
-                print("Change user data successed")
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
     }
     
 

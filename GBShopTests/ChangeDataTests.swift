@@ -26,7 +26,7 @@ class ChangeDataTests: XCTestCase {
         isRequestPassed = nil
     }
     
-    func testChangeData(){
+    func testChangeData() throws{
         changeData.changeUserData(userData: userData) {[weak self] response in
             switch response.result {
             case .success(let changeData):

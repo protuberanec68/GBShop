@@ -34,6 +34,11 @@ class ContainerAssembly{
                               sessionManager: r.resolve(Session.self)!,
                               queue: self.queue)
         }
+        container.register(CatalogDataRequestFactory.self) { r in
+            return CatalogData(errorParser: r.resolve(AbstractErrorParser.self)!,
+                              sessionManager: r.resolve(Session.self)!,
+                              queue: self.queue)
+        }
         return container
     }
 }

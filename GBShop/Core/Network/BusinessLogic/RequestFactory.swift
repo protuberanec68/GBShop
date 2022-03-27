@@ -27,4 +27,8 @@ class RequestFactory {
     func makeChangeDataRequestFaсtory() -> ChangeDataRequestFactory {
         return container.resolve(ChangeDataRequestFactory.self)!
     }
+    
+    func makeCatalogDataRequestFaсtory() -> CatalogDataRequestFactory {
+        return container.resolve(CatalogDataRequestFactory.self)!
+    }
 }
