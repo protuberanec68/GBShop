@@ -12,7 +12,9 @@ class Register: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+    var baseUrl: URL {
+        return URL(string: "http://127.0.0.1:8080")!
+    }
     init(
         errorParser: AbstractErrorParser,
         sessionManager: Session,
@@ -33,8 +35,8 @@ extension Register: RegisterRequestFactory {
 extension Register {
     struct SignUp: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "registerUser.json"
+        let method: HTTPMethod = .post
+        let path: String = "register"
         let userData: UserData
         var parameters: Parameters? {
             return [
