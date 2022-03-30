@@ -12,7 +12,7 @@ class RegisterTests: XCTestCase {
     let expectationRegister = XCTestExpectation(description: "RegisterLogoutTesting...")
     var register: RegisterRequestFactory!
     var isRequestPassed: Bool!
-    let userData = UserData(id: 123, username: "Igor", password: "qwerty", email: "123@gmail.com", gender: .m, creditCard: "1234", bio: "Hello, World!")
+    let userData = UserData(id: 123, username: "Igor", password: "qwerty", email: "123@gmail.com", gender: .male, creditCard: "1234", bio: "Hello, World!")
     
     override func setUpWithError() throws {
         let container = ContainerAssembly().makeContainer()

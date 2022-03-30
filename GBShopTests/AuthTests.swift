@@ -37,8 +37,8 @@ class AuthTests: XCTestCase {
             case .success(let result):
                 self?.isRequestPassed = result.result == 1 ? true : false
                 break
-            case .failure:
-                XCTFail()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
             }
             self?.expectationLogin.fulfill()
         }
@@ -53,8 +53,8 @@ class AuthTests: XCTestCase {
             case .success(let result):
                 self?.isRequestPassed = result.result == 1 ? true : false
                 break
-            case .failure:
-                XCTFail()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
             }
             self?.expectationLogout.fulfill()
         }

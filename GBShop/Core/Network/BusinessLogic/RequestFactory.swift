@@ -30,4 +30,8 @@ class RequestFactory {
     func makeCatalogDataRequestFaсtory() -> CatalogDataRequestFactory {
         return container.resolve(CatalogDataRequestFactory.self)!
     }
+    
+    func makeReviewRequestFactory() -> ReviewRequestFactory {
+        return container.resolve(ReviewRequestFactory.self)!
+    }
 }

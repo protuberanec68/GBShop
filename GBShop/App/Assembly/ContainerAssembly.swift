@@ -36,8 +36,13 @@ class ContainerAssembly {
         }
         container.register(CatalogDataRequestFactory.self) { resolver in
             return CatalogData(errorParser: resolver.resolve(AbstractErrorParser.self)!,
-                              sessionManager: resolver.resolve(Session.self)!,
-                              queue: self.queue)
+                               sessionManager: resolver.resolve(Session.self)!,
+                               queue: self.queue)
+        }
+        container.register(ReviewRequestFactory.self) { resolver in
+            return Review(errorParser: resolver.resolve(AbstractErrorParser.self)!,
+                          sessionManager: resolver.resolve(Session.self)!,
+                          queue: self.queue)
         }
         return container
     }
