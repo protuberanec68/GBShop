@@ -24,12 +24,14 @@ class ChangeData: AbstractRequestFactory {
         }
 }
 extension ChangeData: ChangeDataRequestFactory {
-    func changeUserData(userData: UserData, completionHandler: @escaping (AFDataResponse<ChangeDataResult>) -> Void) {
-        let requestModel = DataModel(baseUrl: baseUrl, userData: userData)
-        self.request(request: requestModel, completionHandler:
-                        completionHandler)
-    }
-
+    func changeUserData(
+        userData: UserData,
+        completionHandler: @escaping (AFDataResponse<ChangeDataResult>) -> Void) {
+            let requestModel = DataModel(baseUrl: baseUrl, userData: userData)
+            self.request(request: requestModel, completionHandler:
+                            completionHandler)
+        }
+    
 }
 
 extension ChangeData {
@@ -40,13 +42,13 @@ extension ChangeData {
         let userData: UserData
         var parameters: Parameters? {
             return [
-                "id_user" : userData.id,
-                "username" : userData.username,
-                "password" : userData.password,
-                "email" : userData.email,
+                "id_user": userData.id,
+                "username": userData.username,
+                "password": userData.password,
+                "email": userData.email,
                 "gender": userData.gender.rawValue,
-                "credit_card" : userData.creditCard,
-                "bio" : userData.bio
+                "credit_card": userData.creditCard,
+                "bio": userData.bio
             ]
         }
     }

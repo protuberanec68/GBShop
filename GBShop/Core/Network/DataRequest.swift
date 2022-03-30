@@ -43,6 +43,9 @@ extension DataRequest { @discardableResult
         queue: DispatchQueue = .main,
         completionHandler: @escaping (AFDataResponse<T>) -> Void) -> Self {
             let responseSerializer = CustomDecodableSerializer<T>(errorParser: errorParser)
-            return response(queue: queue, responseSerializer: responseSerializer, completionHandler: completionHandler)
+            return response(
+                queue: queue,
+                responseSerializer: responseSerializer,
+                completionHandler: completionHandler)
         }
 }

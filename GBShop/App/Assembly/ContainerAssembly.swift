@@ -9,7 +9,7 @@ import Foundation
 import Swinject
 import Alamofire
 
-class ContainerAssembly{
+class ContainerAssembly {
     let session = RequestSession().session()
     let queue = DispatchQueue.global(qos: .utility)
     
@@ -19,27 +19,26 @@ class ContainerAssembly{
         container.register(Session.self) { _ in
             self.session
         }
-        container.register(AuthRequestFactory.self) { r in
-            return Auth(errorParser: r.resolve(AbstractErrorParser.self)!,
-                        sessionManager: r.resolve(Session.self)!,
+        container.register(AuthRequestFactory.self) { resolver in
+            return Auth(errorParser: resolver.resolve(AbstractErrorParser.self)!,
+                        sessionManager: resolver.resolve(Session.self)!,
                         queue: self.queue)
         }
-        container.register(RegisterRequestFactory.self) { r in
-            return Register(errorParser: r.resolve(AbstractErrorParser.self)!,
-                            sessionManager: r.resolve(Session.self)!,
+        container.register(RegisterRequestFactory.self) { resolver in
+            return Register(errorParser: resolver.resolve(AbstractErrorParser.self)!,
+                            sessionManager: resolver.resolve(Session.self)!,
                             queue: self.queue)
         }
-        container.register(ChangeDataRequestFactory.self) { r in
-            return ChangeData(errorParser: r.resolve(AbstractErrorParser.self)!,
-                              sessionManager: r.resolve(Session.self)!,
+        container.register(ChangeDataRequestFactory.self) { resolver in
+            return ChangeData(errorParser: resolver.resolve(AbstractErrorParser.self)!,
+                              sessionManager: resolver.resolve(Session.self)!,
                               queue: self.queue)
         }
-        container.register(CatalogDataRequestFactory.self) { r in
-            return CatalogData(errorParser: r.resolve(AbstractErrorParser.self)!,
-                              sessionManager: r.resolve(Session.self)!,
+        container.register(CatalogDataRequestFactory.self) { resolver in
+            return CatalogData(errorParser: resolver.resolve(AbstractErrorParser.self)!,
+                              sessionManager: resolver.resolve(Session.self)!,
                               queue: self.queue)
         }
         return container
     }
 }
-

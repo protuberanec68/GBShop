@@ -9,10 +9,9 @@ import Foundation
 import Swinject
 
 class RequestFactory {
-    
     let container: Container
     
-    init(container: Container){
+    init(container: Container) {
         self.container = container
     }
     
