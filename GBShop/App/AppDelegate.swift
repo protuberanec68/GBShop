@@ -25,16 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func testRequests() {
-        let register = requestFactory.makeRegisterRequestFaсtory()
-        register.register(userData: UserData(id: 123, username: "", password: "", email:"123" , gender: .m, creditCard: "123-123", bio: "asdf")) {
-            request in
-            switch request.result {
-            case .success(let data):
-                print(data.userMessage)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
         
     }
     
