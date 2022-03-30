@@ -36,7 +36,7 @@ extension ChangeData {
     struct DataModel: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .post
-        let path: String = "changeUserData"
+        let path: String = "changeData"
         let userData: UserData
         var parameters: Parameters? {
             return [

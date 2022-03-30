@@ -26,10 +26,10 @@ class CatalogDataTests: XCTestCase {
     }
     
     func testGetCatalog() throws{
-        catalog.getCatalogData(idCategory: 1) { [weak self] response in
+        catalog.getCatalogData(pageNumber: 2, idCategory: 1) { [weak self] response in
             switch response.result {
             case .success(let catalog):
-                self?.isRequestPassed = catalog.products.isEmpty ? false : true
+                self?.isRequestPassed = catalog.products?.isEmpty ?? true ? false : true
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
@@ -37,7 +37,6 @@ class CatalogDataTests: XCTestCase {
         }
         wait(for: [expectationCatalog], timeout: 10.0)
         XCTAssertTrue(isRequestPassed, "Catalog getting not passed")
-        
     }
 }
 
