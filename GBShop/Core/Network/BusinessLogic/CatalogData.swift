@@ -13,7 +13,7 @@ class CatalogData: AbstractRequestFactory {
     let sessionManager: Session
     let queue: DispatchQueue
     var baseUrl: URL {
-        return URL(string: "http://127.0.0.1:8080")!
+        return URL(string: "https://morning-temple-72944.herokuapp.com")!
     }
     init(
         errorParser: AbstractErrorParser,
