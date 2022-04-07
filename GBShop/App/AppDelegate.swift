@@ -6,17 +6,71 @@
 //
 
 import UIKit
+import Alamofire
 import CoreData
+import Swinject
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    let container: Container = {
+        let assembly = ContainerAssembly()
+        return assembly.makeContainer()
+    }()
+    
+    lazy var requestFactory = RequestFactory(container: container)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        testRequests()
         return true
     }
+    
+    func testRequests() {
+        let auth = requestFactory.makeAuthRequestFaсtory()
+        auth.login(userName: "Somebody", password: "mypassword") {
+            response in
+            switch response.result { case .success(let login):
+                print(login)
+                print("Login successed")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        auth.logout(id: 123) {
+            response in
+            switch response.result { case .success(let logout):
+                print(logout)
+                print("Logout successed")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        let userData = UserData(id: 123, username: "Igor", password: "qwerty", email: "123@gmail.com", gender: .m, creditCard: "1234", bio: "Hello, World!")
+        
+        let register = requestFactory.makeRegisterRequestFaсtory()
+        register.register(userData: userData) {
+            response in
+            switch response.result { case .success(let register):
+                print(register)
+                print(register.userMessage)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        let changeData = requestFactory.makeChangeDataRequestFaсtory()
+        changeData.changeUserData(userData: userData) {
+            response in
+            switch response.result { case .success(let changeData):
+                print(changeData)
+                print("Change user data successed")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
 
     // MARK: UISceneSession Lifecycle
 
