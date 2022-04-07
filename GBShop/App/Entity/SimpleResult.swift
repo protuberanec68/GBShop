@@ -9,7 +9,10 @@ import Foundation
 
 struct SimpleResult: Codable {
     let result: Int
+    let userMessage: String?
+    let errorMessage: String?
 }
 
 typealias ChangeDataResult = SimpleResult
 typealias LogoutResult = SimpleResult
+typealias RegisterResult = SimpleResult
