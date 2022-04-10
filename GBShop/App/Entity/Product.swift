@@ -8,7 +8,7 @@
 import Foundation
 
 struct Product: Codable {
-    let idProduct: Int
+    let idProduct: UInt
     let productName: String
     let price: Decimal
     

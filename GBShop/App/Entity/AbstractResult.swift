@@ -17,3 +17,4 @@ typealias ChangeDataResult = AbstractResult
 typealias LogoutResult = AbstractResult
 typealias RegisterResult = AbstractResult
 typealias ReviewResult = AbstractResult
+typealias BasketResult = AbstractResult

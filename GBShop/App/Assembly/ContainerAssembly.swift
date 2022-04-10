@@ -44,6 +44,11 @@ class ContainerAssembly {
                           sessionManager: resolver.resolve(Session.self)!,
                           queue: self.queue)
         }
+        container.register(BasketRequestFactory.self) { resolver in
+            return Basket(errorParser: resolver.resolve(AbstractErrorParser.self)!,
+                          sessionManager: resolver.resolve(Session.self)!,
+                          queue: self.queue)
+        }
         return container
     }
 }
