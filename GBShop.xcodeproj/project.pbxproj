@@ -35,6 +35,8 @@
 		408DA73627DEA16100B18B4D /* AuthRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408DA73527DEA16100B18B4D /* AuthRequestFactory.swift */; };
 		408DA73827DEA18300B18B4D /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408DA73727DEA18300B18B4D /* Auth.swift */; };
 		408DA73A27DEA1AA00B18B4D /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408DA73927DEA1AA00B18B4D /* RequestFactory.swift */; };
+		40CB768D2803258E00E7EF8F /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CB768C2803258E00E7EF8F /* Cart.swift */; };
+		40CB768F280329CF00E7EF8F /* CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CB768E280329CF00E7EF8F /* CartTests.swift */; };
 		40E09A9827E1192800804CAF /* RegisterRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E09A9727E1192800804CAF /* RegisterRequestFactory.swift */; };
 		40E09A9A27E11A8700804CAF /* AbstractResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E09A9927E11A8700804CAF /* AbstractResult.swift */; };
 		40E09A9E27E11B6F00804CAF /* ChangeDataRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E09A9D27E11B6F00804CAF /* ChangeDataRequestFactory.swift */; };
@@ -96,6 +98,8 @@
 		408DA73527DEA16100B18B4D /* AuthRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestFactory.swift; sourceTree = "<group>"; };
 		408DA73727DEA18300B18B4D /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		408DA73927DEA1AA00B18B4D /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		40CB768C2803258E00E7EF8F /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		40CB768E280329CF00E7EF8F /* CartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTests.swift; sourceTree = "<group>"; };
 		40E09A9727E1192800804CAF /* RegisterRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequestFactory.swift; sourceTree = "<group>"; };
 		40E09A9927E11A8700804CAF /* AbstractResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractResult.swift; sourceTree = "<group>"; };
 		40E09A9D27E11B6F00804CAF /* ChangeDataRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDataRequestFactory.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 				4000252327F0809800163BE9 /* ChangeDataTests.swift */,
 				4000252527F0C77F00163BE9 /* CatalogDataTests.swift */,
 				40ECB1AD27F4E2B6009320BD /* ReviewTests.swift */,
+				40CB768E280329CF00E7EF8F /* CartTests.swift */,
 			);
 			path = GBShopTests;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				40E09AA127E11C3E00804CAF /* UserData.swift */,
 				4000252827F0C99800163BE9 /* Product.swift */,
 				40ECB1AB27F4DDDD009320BD /* ReviewsResult.swift */,
+				40CB768C2803258E00E7EF8F /* Cart.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -458,6 +464,7 @@
 				4000253027F0D48600163BE9 /* CatalogData.swift in Sources */,
 				408DA73A27DEA1AA00B18B4D /* RequestFactory.swift in Sources */,
 				408DA72727DE9E0700B18B4D /* AbstractErrorParser.swift in Sources */,
+				40CB768D2803258E00E7EF8F /* Cart.swift in Sources */,
 				408DA72B27DE9EAA00B18B4D /* DataRequest.swift in Sources */,
 				408DA73627DEA16100B18B4D /* AuthRequestFactory.swift in Sources */,
 				40E09A9A27E11A8700804CAF /* AbstractResult.swift in Sources */,
@@ -493,6 +500,7 @@
 				40F43F4927EFB4210075D912 /* AuthTests.swift in Sources */,
 				4000252227F0808300163BE9 /* RegisterTests.swift in Sources */,
 				4000252627F0C77F00163BE9 /* CatalogDataTests.swift in Sources */,
+				40CB768F280329CF00E7EF8F /* CartTests.swift in Sources */,
 				4000252427F0809800163BE9 /* ChangeDataTests.swift in Sources */,
 				40ECB1AE27F4E2B6009320BD /* ReviewTests.swift in Sources */,
 			);
