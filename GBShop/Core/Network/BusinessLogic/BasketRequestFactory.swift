@@ -10,6 +10,6 @@ import Alamofire
 
 protocol BasketRequestFactory {
     func payBasket(
-        basketProducts: [BasketProduct],
+        basketProducts: BasketProducts,
         completionHandler: @escaping (AFDataResponse<BasketResult>) -> Void)
 }

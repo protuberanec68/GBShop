@@ -37,10 +37,11 @@ class Cart {
         return result
     }
     
-    func basket() -> [BasketProduct] {
-        products.map {
+    func basket() -> BasketProducts {
+        let products = self.products.map {
             return BasketProduct(productID: $0.key.idProduct, quantity: $0.value)
         }
+        return BasketProducts(products: products)
     }
     
     @discardableResult

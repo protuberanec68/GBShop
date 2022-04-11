@@ -7,7 +7,16 @@
 
 import Foundation
 
+struct BasketProducts: Codable {
+    let products: [BasketProduct]
+}
+
 struct BasketProduct: Codable {
-    var productID: UInt
-    var quantity: UInt
+    let productID: UInt
+    let quantity: UInt
+    
+    enum CodingKeys: String, CodingKey {
+        case productID
+        case quantity
+    }
 }

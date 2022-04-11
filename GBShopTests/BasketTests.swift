@@ -38,6 +38,7 @@ class BasketTests: XCTestCase {
     func testAddReview() throws {
         
         let basketProducts = cart.basket()
+        print(basketProducts)
         basket.payBasket(basketProducts: basketProducts) { [weak self] response in
             switch response.result {
             case .success(let result):
