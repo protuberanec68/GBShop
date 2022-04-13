@@ -39,7 +39,7 @@ class BasketTests: XCTestCase {
         
         let basketProducts = cart.basket()
         print(basketProducts)
-        basket.payBasket(basketProducts: basketProducts) { [weak self] response in
+        basket.payBasket(basketProducts: basketProducts, userID: 244) { [weak self] response in
             switch response.result {
             case .success(let result):
                 self?.isRequestPassed = result.result == 1 ? true : false

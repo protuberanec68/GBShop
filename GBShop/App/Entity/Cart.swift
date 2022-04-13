@@ -37,11 +37,16 @@ class Cart {
         return result
     }
     
-    func basket() -> BasketProducts {
-        let products = self.products.map {
-            return BasketProduct(productID: $0.key.idProduct, quantity: $0.value)
+    func basket() -> [[String: String]] {
+        var newProducts: [[String: String]] = []
+        
+        self.products.forEach {
+            var newProduct: [String: String] = [:]
+            newProduct["productID"] = String($0.key.idProduct)
+            newProduct["quantity"] = String($0.value)
+            newProducts.append(newProduct)
         }
-        return BasketProducts(products: products)
+        return newProducts
     }
     
     @discardableResult

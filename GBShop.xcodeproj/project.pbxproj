@@ -39,7 +39,6 @@
 		40CB768F280329CF00E7EF8F /* CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CB768E280329CF00E7EF8F /* CartTests.swift */; };
 		40CB7691280337BA00E7EF8F /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CB7690280337BA00E7EF8F /* Basket.swift */; };
 		40CB7693280338BF00E7EF8F /* BasketRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CB7692280338BF00E7EF8F /* BasketRequestFactory.swift */; };
-		40CB769528033A1A00E7EF8F /* BasketProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CB769428033A1A00E7EF8F /* BasketProduct.swift */; };
 		40CB769728033BD800E7EF8F /* BasketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CB769628033BD800E7EF8F /* BasketTests.swift */; };
 		40E09A9827E1192800804CAF /* RegisterRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E09A9727E1192800804CAF /* RegisterRequestFactory.swift */; };
 		40E09A9A27E11A8700804CAF /* AbstractResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E09A9927E11A8700804CAF /* AbstractResult.swift */; };
@@ -106,7 +105,6 @@
 		40CB768E280329CF00E7EF8F /* CartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTests.swift; sourceTree = "<group>"; };
 		40CB7690280337BA00E7EF8F /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		40CB7692280338BF00E7EF8F /* BasketRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketRequestFactory.swift; sourceTree = "<group>"; };
-		40CB769428033A1A00E7EF8F /* BasketProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketProduct.swift; sourceTree = "<group>"; };
 		40CB769628033BD800E7EF8F /* BasketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTests.swift; sourceTree = "<group>"; };
 		40E09A9727E1192800804CAF /* RegisterRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequestFactory.swift; sourceTree = "<group>"; };
 		40E09A9927E11A8700804CAF /* AbstractResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractResult.swift; sourceTree = "<group>"; };
@@ -301,7 +299,6 @@
 				4000252827F0C99800163BE9 /* Product.swift */,
 				40ECB1AB27F4DDDD009320BD /* ReviewsResult.swift */,
 				40CB768C2803258E00E7EF8F /* Cart.swift */,
-				40CB769428033A1A00E7EF8F /* BasketProduct.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -500,7 +497,6 @@
 				40E09A9827E1192800804CAF /* RegisterRequestFactory.swift in Sources */,
 				40ECB1AA27F4DD32009320BD /* Review.swift in Sources */,
 				40E09AA627E122E900804CAF /* ChangeData.swift in Sources */,
-				40CB769528033A1A00E7EF8F /* BasketProduct.swift in Sources */,
 				407BF33C27E3D05300C17642 /* ContainerAssembly.swift in Sources */,
 				408DA72D27DEA02B00B18B4D /* AbstractRequestFactory.swift in Sources */,
 				408DA72927DE9E3B00B18B4D /* ErrorParser.swift in Sources */,
