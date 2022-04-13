@@ -50,6 +50,7 @@
 		40ECB1AA27F4DD32009320BD /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ECB1A927F4DD32009320BD /* Review.swift */; };
 		40ECB1AC27F4DDDD009320BD /* ReviewsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ECB1AB27F4DDDD009320BD /* ReviewsResult.swift */; };
 		40ECB1AE27F4E2B6009320BD /* ReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ECB1AD27F4E2B6009320BD /* ReviewTests.swift */; };
+		40F2382D2807561F001C72FE /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F2382C2807561F001C72FE /* BaseURL.swift */; };
 		40F43F4927EFB4210075D912 /* AuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F43F4827EFB4210075D912 /* AuthTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +117,7 @@
 		40ECB1A927F4DD32009320BD /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		40ECB1AB27F4DDDD009320BD /* ReviewsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsResult.swift; sourceTree = "<group>"; };
 		40ECB1AD27F4E2B6009320BD /* ReviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTests.swift; sourceTree = "<group>"; };
+		40F2382C2807561F001C72FE /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		40F43F4827EFB4210075D912 /* AuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +214,7 @@
 				408DA72C27DEA02B00B18B4D /* AbstractRequestFactory.swift */,
 				408DA72E27DEA05F00B18B4D /* RequestRouter.swift */,
 				407BF33D27E3D31200C17642 /* RequestSession.swift */,
+				40F2382C2807561F001C72FE /* BaseURL.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				40E09AA427E122DA00804CAF /* Register.swift in Sources */,
 				40E09AA227E11C3E00804CAF /* UserData.swift in Sources */,
 				4065715027CE96DD003897A0 /* SceneDelegate.swift in Sources */,
+				40F2382D2807561F001C72FE /* BaseURL.swift in Sources */,
 				40ECB1AC27F4DDDD009320BD /* ReviewsResult.swift in Sources */,
 				407BF33E27E3D31200C17642 /* RequestSession.swift in Sources */,
 				40E09A9827E1192800804CAF /* RegisterRequestFactory.swift in Sources */,
