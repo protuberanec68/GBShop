@@ -8,25 +8,16 @@
 import UIKit
 import Alamofire
 import CoreData
-import Swinject
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    let container: Container = {
-        let assembly = ContainerAssembly()
-        return assembly.makeContainer()
-    }()
-    lazy var requestFactory = RequestFactory(container: container)
     
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-            testRequests()
+
             return true
         }
-    
-    func testRequests() {
-    }
 
     // MARK: UISceneSession Lifecycle
     func application(

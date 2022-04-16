@@ -14,6 +14,7 @@
 		4000252B27F0D08000163BE9 /* CatalogDataRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000252A27F0D08000163BE9 /* CatalogDataRequestFactory.swift */; };
 		4000252D27F0D1FF00163BE9 /* CatalogDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000252C27F0D1FF00163BE9 /* CatalogDataResult.swift */; };
 		4000253027F0D48600163BE9 /* CatalogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000252F27F0D48600163BE9 /* CatalogData.swift */; };
+		402FF7C7280B6801009BC905 /* ShowMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FF7C6280B6801009BC905 /* ShowMessage.swift */; };
 		4065714E27CE96DD003897A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065714D27CE96DD003897A0 /* AppDelegate.swift */; };
 		4065715027CE96DD003897A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065714F27CE96DD003897A0 /* SceneDelegate.swift */; };
 		4065715A27CE96DE003897A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4065715927CE96DE003897A0 /* Assets.xcassets */; };
@@ -51,6 +52,11 @@
 		40ECB1AE27F4E2B6009320BD /* ReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ECB1AD27F4E2B6009320BD /* ReviewTests.swift */; };
 		40F2382D2807561F001C72FE /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F2382C2807561F001C72FE /* BaseURL.swift */; };
 		40F2382F28077BE8001C72FE /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F2382E28077BE8001C72FE /* Basket.swift */; };
+		40F23831280AE8E9001C72FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40F23830280AE8E9001C72FE /* Main.storyboard */; };
+		40F23833280AFBCC001C72FE /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F23832280AFBCC001C72FE /* LoginController.swift */; };
+		40F23835280AFBE0001C72FE /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F23834280AFBE0001C72FE /* RegisterController.swift */; };
+		40F23837280AFBFA001C72FE /* UserDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F23836280AFBFA001C72FE /* UserDataController.swift */; };
+		40F23839280B0EB7001C72FE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F23838280B0EB7001C72FE /* CurrentUser.swift */; };
 		40F43F4927EFB4210075D912 /* AuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F43F4827EFB4210075D912 /* AuthTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +85,7 @@
 		4000252A27F0D08000163BE9 /* CatalogDataRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDataRequestFactory.swift; sourceTree = "<group>"; };
 		4000252C27F0D1FF00163BE9 /* CatalogDataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDataResult.swift; sourceTree = "<group>"; };
 		4000252F27F0D48600163BE9 /* CatalogData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogData.swift; sourceTree = "<group>"; };
+		402FF7C6280B6801009BC905 /* ShowMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMessage.swift; sourceTree = "<group>"; };
 		4065714A27CE96DD003897A0 /* GBShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4065714D27CE96DD003897A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4065714F27CE96DD003897A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +125,11 @@
 		40ECB1AD27F4E2B6009320BD /* ReviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTests.swift; sourceTree = "<group>"; };
 		40F2382C2807561F001C72FE /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		40F2382E28077BE8001C72FE /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
+		40F23830280AE8E9001C72FE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		40F23832280AFBCC001C72FE /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		40F23834280AFBE0001C72FE /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		40F23836280AFBFA001C72FE /* UserDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataController.swift; sourceTree = "<group>"; };
+		40F23838280B0EB7001C72FE /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		40F43F4827EFB4210075D912 /* AuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -279,6 +291,9 @@
 		40E8545927CEA82D0079C09D /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				40F23845280B1768001C72FE /* View */,
+				40F23838280B0EB7001C72FE /* CurrentUser.swift */,
+				402FF7C6280B6801009BC905 /* ShowMessage.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -304,6 +319,17 @@
 				40CB768C2803258E00E7EF8F /* Cart.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		40F23845280B1768001C72FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				40F23830280AE8E9001C72FE /* Main.storyboard */,
+				40F23832280AFBCC001C72FE /* LoginController.swift */,
+				40F23834280AFBE0001C72FE /* RegisterController.swift */,
+				40F23836280AFBFA001C72FE /* UserDataController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		40F43F4727EFB3FA0075D912 /* BusinessLogic */ = {
@@ -426,6 +452,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40F23831280AE8E9001C72FE /* Main.storyboard in Resources */,
 				4065715D27CE96DE003897A0 /* LaunchScreen.storyboard in Resources */,
 				4065715A27CE96DE003897A0 /* Assets.xcassets in Resources */,
 			);
@@ -475,7 +502,11 @@
 			files = (
 				4000253027F0D48600163BE9 /* CatalogData.swift in Sources */,
 				408DA73A27DEA1AA00B18B4D /* RequestFactory.swift in Sources */,
+				402FF7C7280B6801009BC905 /* ShowMessage.swift in Sources */,
+				40F23835280AFBE0001C72FE /* RegisterController.swift in Sources */,
 				408DA72727DE9E0700B18B4D /* AbstractErrorParser.swift in Sources */,
+				40F23837280AFBFA001C72FE /* UserDataController.swift in Sources */,
+				40F23839280B0EB7001C72FE /* CurrentUser.swift in Sources */,
 				40CB768D2803258E00E7EF8F /* Cart.swift in Sources */,
 				408DA72B27DE9EAA00B18B4D /* DataRequest.swift in Sources */,
 				408DA73627DEA16100B18B4D /* AuthRequestFactory.swift in Sources */,
@@ -486,6 +517,7 @@
 				4000252D27F0D1FF00163BE9 /* CatalogDataResult.swift in Sources */,
 				4065714E27CE96DD003897A0 /* AppDelegate.swift in Sources */,
 				408DA73127DEA0B000B18B4D /* LoginResult.swift in Sources */,
+				40F23833280AFBCC001C72FE /* LoginController.swift in Sources */,
 				40CB7693280338BF00E7EF8F /* BasketRequestFactory.swift in Sources */,
 				408DA73827DEA18300B18B4D /* Auth.swift in Sources */,
 				4000252B27F0D08000163BE9 /* CatalogDataRequestFactory.swift in Sources */,
@@ -687,9 +719,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GBShop/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -714,9 +749,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GBShop/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
