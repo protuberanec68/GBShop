@@ -32,20 +32,20 @@ class Cart {
     }
     
     func totalCost() -> Decimal {
-        var result: Decimal = 0.0
-        products.forEach { result += $0.key.price * Decimal($0.value) }
+        let result: Decimal = products
+            .map { $0.key.price * Decimal($0.value) }
+            .reduce(Decimal(0.0), { $0 + $1 })
         return result
     }
     
     func basket() -> [[String: String]] {
-        var newProducts: [[String: String]] = []
-        
-        self.products.forEach {
-            var newProduct: [String: String] = [:]
-            newProduct["productID"] = String($0.key.idProduct)
-            newProduct["quantity"] = String($0.value)
-            newProducts.append(newProduct)
-        }
+        let newProducts: [[String: String]] = self.products
+            .map {
+                var newProduct: [String: String] = [:]
+                newProduct["productID"] = String($0.key.idProduct)
+                newProduct["quantity"] = String($0.value)
+                return newProduct
+            }
         return newProducts
     }
     
