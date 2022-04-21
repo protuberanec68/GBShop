@@ -18,7 +18,8 @@ class Review: AbstractRequestFactory {
     init(
         errorParser: AbstractErrorParser,
         sessionManager: Session,
-        queue: DispatchQueue = DispatchQueue.global(qos: .utility)) { self.errorParser = errorParser
+        queue: DispatchQueue = DispatchQueue.global(qos: .utility)) {
+            self.errorParser = errorParser
             self.sessionManager = sessionManager
             self.queue = queue
         }

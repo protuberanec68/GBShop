@@ -34,4 +34,8 @@ class RequestFactory {
     func makeReviewRequestFactory() -> ReviewRequestFactory {
         return container.resolve(ReviewRequestFactory.self)!
     }
+    
+    func makeBasketRequestFactory() -> BasketRequestFactory {
+        return container.resolve(BasketRequestFactory.self)!
+    }
 }
