@@ -9,7 +9,6 @@ import Foundation
 import Alamofire
 
 protocol AbstractRequestFactory {
-    
     var errorParser: AbstractErrorParser { get }
     var sessionManager: Session { get }
     var queue: DispatchQueue { get }
@@ -18,7 +17,6 @@ protocol AbstractRequestFactory {
         request: URLRequestConvertible,
         completionHandler: @escaping (AFDataResponse<T>) -> Void) -> DataRequest
 }
-
 
 extension AbstractRequestFactory {
     @discardableResult

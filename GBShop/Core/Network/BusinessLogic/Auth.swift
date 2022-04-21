@@ -53,7 +53,6 @@ extension Auth {
             ]
         }
     }
-    
     struct Logout: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .get

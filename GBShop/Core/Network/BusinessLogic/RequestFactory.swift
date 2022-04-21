@@ -9,10 +9,9 @@ import Foundation
 import Swinject
 
 class RequestFactory {
-    
     let container: Container
     
-    init(container: Container){
+    init(container: Container) {
         self.container = container
     }
     
@@ -30,5 +29,9 @@ class RequestFactory {
     
     func makeCatalogDataRequestFaсtory() -> CatalogDataRequestFactory {
         return container.resolve(CatalogDataRequestFactory.self)!
+    }
+    
+    func makeReviewRequestFactory() -> ReviewRequestFactory {
+        return container.resolve(ReviewRequestFactory.self)!
     }
 }

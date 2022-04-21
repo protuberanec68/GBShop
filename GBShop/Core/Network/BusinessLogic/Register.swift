@@ -40,13 +40,13 @@ extension Register {
         let userData: UserData
         var parameters: Parameters? {
             return [
-                "id_user" : userData.id,
-                "username" : userData.username,
-                "password" : userData.password,
-                "email" : userData.email,
+                "id_user": userData.id,
+                "username": userData.username,
+                "password": userData.password,
+                "email": userData.email,
                 "gender": userData.gender.rawValue,
-                "credit_card" : userData.creditCard,
-                "bio" : userData.bio
+                "credit_card": userData.creditCard,
+                "bio": userData.bio
             ]
         }
     }

@@ -8,7 +8,9 @@
 import Foundation
 import Alamofire
 enum RequestRouterEncoding {
+    // swiftlint:disable all
     case url, json
+    // swiftlint:enable all
 }
 protocol RequestRouter: URLRequestConvertible {
     var baseUrl: URL { get }
@@ -31,7 +33,8 @@ extension RequestRouter {
         urlRequest.httpMethod = method.rawValue
         switch self.encoding {
         case .url:
-            return try URLEncoding.default.encode(urlRequest, with: parameters) case .json:
+            return try URLEncoding.default.encode(urlRequest, with: parameters)
+        case .json:
             return try JSONEncoding.default.encode(urlRequest, with: parameters) }
     }
 }

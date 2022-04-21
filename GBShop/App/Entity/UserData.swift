@@ -14,10 +14,12 @@ struct UserData {
     let email: String
     let gender: Gender
     let creditCard: String
+    // swiftlint:disable all
     let bio: String
+    // swiftlint:enable all
 }
 
 enum Gender: String {
-    case m = "m"
-    case f = "f"
+    case male = "m"
+    case female = "f"
 }
