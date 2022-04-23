@@ -12,7 +12,6 @@ import XCTest
 class BasketTests: XCTestCase {
     let expectation = XCTestExpectation(description: "BasketPayTesting...")
     var basket: BasketRequestFactory!
-    var cart: Cart!
     var isRequestPassed: Bool!
     let product1 = Product(idProduct: 123, productName: "Ежевика", price: 3.00)
     let product2 = Product(idProduct: 234, productName: "Клубника", price: 25.32)
@@ -22,22 +21,21 @@ class BasketTests: XCTestCase {
         let container = ContainerAssembly().makeContainer()
         let factory = RequestFactory(container: container)
         basket = factory.makeBasketRequestFactory()
-        cart = Cart()
-        cart.addProduct(product: product1)
-        cart.addProduct(product: product2, quantity: 3)
-        cart.addProduct(product: product3)
+        Cart.cart.addProduct(product: product1)
+        Cart.cart.addProduct(product: product2, quantity: 3)
+        Cart.cart.addProduct(product: product3)
         isRequestPassed = false
     }
 
     override func tearDownWithError() throws {
         basket = nil
-        cart = nil
+        Cart.cart.clearCart()
         isRequestPassed = nil
     }
 
     func testAddReview() throws {
         
-        let basketProducts = cart.basket()
+        let basketProducts = Cart.cart.basket()
         print(basketProducts)
         basket.payBasket(basketProducts: basketProducts, userID: 244) { [weak self] response in
             switch response.result {
