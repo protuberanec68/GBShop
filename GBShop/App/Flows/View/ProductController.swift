@@ -13,14 +13,17 @@ class ProductController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "ImageCell", bundle: nil), forCellReuseIdentifier: "imageCell")
-
+        
+        tableView.register(
+            UINib(nibName: "ImageCell", bundle: nil), forCellReuseIdentifier: "imageCell")
+        tableView.register(
+            UINib(nibName: "ButtonCell", bundle: nil), forCellReuseIdentifier: "buttonCell")
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -28,8 +31,16 @@ class ProductController: UITableViewController {
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: "imageCell",
                 for: indexPath) as? ImageCell
-            else { return UITableViewCell()}
+            else { return UITableViewCell() }
             cell.configure(image: UIImage(systemName: "cup.and.saucer.fill"))
+            return cell
+        }
+        if indexPath.row == 3 {
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: "buttonCell",
+                for: indexPath) as? ButtonCell
+            else { return UITableViewCell() }
+            cell.configure(title: "Добавить в корзину")
             return cell
         }
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
@@ -37,7 +48,7 @@ class ProductController: UITableViewController {
             var content = cell.defaultContentConfiguration()
             content.text = product.productName
             cell.contentConfiguration = content
-        } else {
+        } else if indexPath.row == 2 {
             var content = cell.defaultContentConfiguration()
             content.text = product.price.formatted(.currency(code: ""))
             cell.contentConfiguration = content
@@ -56,44 +67,9 @@ class ProductController: UITableViewController {
         do {
             tableView.deselectRow(at: indexPath, animated: true)
         }
+        if indexPath.row == 3 {
+            Cart.cart.addProduct(product: product)
+            showToast(message: "Товар добавлен в корзину", font: .systemFont(ofSize: 12.0))
+        }
     }
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(
-     _ tableView: UITableView,
-     commit editingStyle: UITableViewCell.EditingStyle,
-     forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
 }

@@ -65,7 +65,7 @@ final class CatalogController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        30.0
+        40.0
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -79,27 +79,24 @@ final class CatalogController: UITableViewController {
         else { return }
         productView.product = product
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
+    
     override func tableView(
-     _ tableView: UITableView,
-     commit editingStyle: UITableViewCell.EditingStyle,
-     forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it
-     into the array, and add a new row to the table view
-        }    
+        _ tableView: UITableView,
+        trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+            let action = UIContextualAction(
+                style: .normal,
+                title: "В корзину") { [weak self] (_, _, completionHandler) in
+                    guard let self = self else { return }
+                    self.addToCart(indexPath: indexPath)
+                    completionHandler(true)
+                }
+            action.backgroundColor = .systemBlue
+            return UISwipeActionsConfiguration(actions: [action])
+        }
+    
+    private func addToCart(indexPath: IndexPath) {
+        let product = products[indexPath.row]
+        Cart.cart.addProduct(product: product)
+        showToast(message: "Товар добавлен в корзину", font: .systemFont(ofSize: 12.0))
     }
-    */
 }

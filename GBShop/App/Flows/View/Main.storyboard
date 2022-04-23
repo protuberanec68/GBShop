@@ -171,7 +171,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHQ-Tc-2bl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1600" y="-282"/>
+            <point key="canvasLocation" x="1600" y="-459"/>
+        </scene>
+        <!--Корзина-->
+        <scene sceneID="yka-1G-Oeg">
+            <objects>
+                <tableViewController id="HfU-2V-dDk" customClass="CartController" customModule="GBShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="jia-Rw-b5W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="HfU-2V-dDk" id="Rfs-4j-DaZ"/>
+                            <outlet property="delegate" destination="HfU-2V-dDk" id="DhJ-XM-SXJ"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Корзина" image="cart.fill" catalog="system" id="dAt-Ll-QH7"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vAD-at-1Go" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2441" y="-67"/>
         </scene>
         <!--Catalog Controller-->
         <scene sceneID="y8e-SI-Hn3">
@@ -193,7 +212,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAY-OL-FIM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="425"/>
+            <point key="canvasLocation" x="2442" y="589"/>
         </scene>
         <!--Product Controller-->
         <scene sceneID="ebc-K8-PM0">
@@ -212,7 +231,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yh6-WJ-67o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3347.826086956522" y="424.55357142857139"/>
+            <point key="canvasLocation" x="3333" y="589"/>
         </scene>
         <!--Register Controller-->
         <scene sceneID="rfU-dV-IZ3">
@@ -319,6 +338,7 @@
                     <connections>
                         <segue destination="3Mt-vh-cnr" kind="relationship" relationship="viewControllers" id="XG6-xc-aBX"/>
                         <segue destination="iqj-dQ-TkG" kind="relationship" relationship="viewControllers" id="Bd9-Vr-uhi"/>
+                        <segue destination="HfU-2V-dDk" kind="relationship" relationship="viewControllers" id="TXd-Zl-jSC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LsC-bv-gW8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -342,10 +362,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oc5-mp-zn9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1600.0000000000002" y="424.55357142857139"/>
+            <point key="canvasLocation" x="1600" y="589"/>
         </scene>
     </scenes>
     <resources>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">

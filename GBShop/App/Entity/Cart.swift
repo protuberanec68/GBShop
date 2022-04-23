@@ -7,7 +7,17 @@
 
 import Foundation
 
+struct ProductWithQuantity {
+    var product: Product
+    var quantity: UInt
+}
+
 class Cart {
+    
+    static let cart = Cart()
+    
+    private init() { }
+    
     private(set) var products: [Product: UInt] = [:]
     
     @discardableResult
@@ -36,6 +46,12 @@ class Cart {
             .map { $0.key.price * Decimal($0.value) }
             .reduce(Decimal(0.0), { $0 + $1 })
         return result
+    }
+    
+    func productsWithQuantity() -> [ProductWithQuantity] {
+        return products.map {
+            ProductWithQuantity(product: $0.key, quantity: $0.value)
+        }
     }
     
     func basket() -> [[String: String]] {
