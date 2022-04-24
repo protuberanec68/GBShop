@@ -79,14 +79,14 @@
                     <connections>
                         <outlet property="loginField" destination="TSc-Ac-4Kr" id="OWv-WB-rhw"/>
                         <outlet property="passwordField" destination="q2n-Q9-hxR" id="yDg-70-KTO"/>
-                        <segue destination="3Mt-vh-cnr" kind="presentation" identifier="goMain" modalPresentationStyle="fullScreen" id="TPJ-XT-gOI"/>
+                        <segue destination="KcP-Oc-mqc" kind="presentation" identifier="goMain" modalPresentationStyle="fullScreen" id="TPJ-XT-gOI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-26" y="51"/>
         </scene>
-        <!--User Data Controller-->
+        <!--Профиль-->
         <scene sceneID="9Xo-C3-S4Z">
             <objects>
                 <viewController id="3Mt-vh-cnr" customClass="UserDataController" customModule="GBShop" customModuleProvider="target" sceneMemberID="viewController">
@@ -160,6 +160,7 @@
                             <constraint firstItem="tQq-Ni-q1D" firstAttribute="width" secondItem="xVT-f5-Rxk" secondAttribute="width" multiplier="0.9" id="wNV-rE-xTX"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Профиль" image="person.fill" catalog="system" id="YPm-f7-MzO"/>
                     <connections>
                         <outlet property="bioField" destination="oxz-U1-8sV" id="Xha-bs-31E"/>
                         <outlet property="cardField" destination="1b3-8U-fC1" id="qxv-tI-pdD"/>
@@ -170,7 +171,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHQ-Tc-2bl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="787" y="51"/>
+            <point key="canvasLocation" x="1600" y="-282"/>
+        </scene>
+        <!--Каталог-->
+        <scene sceneID="y8e-SI-Hn3">
+            <objects>
+                <tableViewController id="XNZ-L4-NNG" customClass="CatalogController" customModule="GBShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ARG-Og-7Zb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="XNZ-L4-NNG" id="t1B-eT-GKx"/>
+                            <outlet property="delegate" destination="XNZ-L4-NNG" id="A6i-4s-G3C"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Каталог" image="house.fill" catalog="system" id="Pja-tC-PQQ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TAY-OL-FIM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1600" y="425"/>
         </scene>
         <!--Register Controller-->
         <scene sceneID="rfU-dV-IZ3">
@@ -264,8 +284,28 @@
             </objects>
             <point key="canvasLocation" x="-26" y="759"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="pMo-D3-Zvd">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="KcP-Oc-mqc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MWQ-gd-Hzg">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="3Mt-vh-cnr" kind="relationship" relationship="viewControllers" id="XG6-xc-aBX"/>
+                        <segue destination="XNZ-L4-NNG" kind="relationship" relationship="viewControllers" id="Bd9-Vr-uhi"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LsC-bv-gW8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786.95652173913049" y="50.892857142857139"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
