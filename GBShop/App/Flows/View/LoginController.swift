@@ -42,6 +42,7 @@ final class LoginController: UIViewController {
                     guard result.result == 1,
                           let user = result.user
                     else {
+                        EventLogger(event: .loginFailure, info: result.errorMessage ?? "Неизвестная ошибка")
                         self.showOk(
                             title: "Ошибка",
                             message: result.errorMessage ?? "Неизвестная ошибка")
@@ -49,9 +50,11 @@ final class LoginController: UIViewController {
                         return
                     }
                     CurrentUser.shared.user = user
+                    EventLogger(event: .loginSuccess)
                     self.passwordField.text = ""
                     self.performSegue(withIdentifier: "goMain", sender: nil)
                 case .failure(let error):
+                    EventLogger(event: .loginFailure, info: error.localizedDescription)
                     self.showOk(
                         title: "Ошибка",
                         message: error.localizedDescription)

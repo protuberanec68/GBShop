@@ -54,15 +54,20 @@ final class RegisterController: UIViewController {
                 switch response.result {
                 case .success(let result):
                     if result.result == 1 {
+                        EventLogger(event: .registrationSuccess)
                         self.showOk(title: "OK", message: "Вы зарегистрировались") {
                             self.dismiss(animated: true)
                         }
                     } else {
+                        EventLogger(
+                            event: .registrationFailure,
+                            info: result.errorMessage ?? "Какая-то ошибка")
                         self.showOk(
                             title: "Error",
                             message: result.errorMessage ?? "Какая-то ошибка")
                     }
                 case .failure(let error):
+                    EventLogger(event: .registrationFailure, info: error.localizedDescription)
                     self.showOk(title: "Error", message: error.localizedDescription)
                 }
             }
