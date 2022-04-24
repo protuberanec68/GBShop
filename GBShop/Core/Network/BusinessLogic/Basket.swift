@@ -4,7 +4,6 @@
 //
 //  Created by Игорь Андрианов on 10.04.2022.
 //
-
 import Foundation
 import Alamofire
 
@@ -13,7 +12,7 @@ class Basket: AbstractRequestFactory {
     let sessionManager: Session
     let queue: DispatchQueue
     var baseUrl: URL {
-        return URL(string: "https://morning-temple-72944.herokuapp.com")!
+        return BaseURL.shared.baseURL
     }
     init(
         errorParser: AbstractErrorParser,

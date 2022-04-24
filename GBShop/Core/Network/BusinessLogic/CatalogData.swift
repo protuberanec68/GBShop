@@ -12,9 +12,8 @@ class CatalogData: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    var baseUrl: URL {
-        return URL(string: "https://morning-temple-72944.herokuapp.com")!
-    }
+    var baseUrl: URL { BaseURL.shared.baseURL }
+    
     init(
         errorParser: AbstractErrorParser,
         sessionManager: Session,
