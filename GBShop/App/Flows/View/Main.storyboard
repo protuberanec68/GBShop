@@ -18,16 +18,19 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="логин = Somebody" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TSc-Ac-4Kr">
                                 <rect key="frame" x="62" y="144" width="290" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="login"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="пароль = mypassword" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q2n-Q9-hxR">
                                 <rect key="frame" x="62" y="211" width="290" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="password"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiA-WI-Uc8">
                                 <rect key="frame" x="145" y="295" width="124" height="36"/>
+                                <accessibility key="accessibilityConfiguration" identifier="loginButton"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
@@ -61,6 +64,9 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="loginView">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="q2n-Q9-hxR" firstAttribute="width" secondItem="TSc-Ac-4Kr" secondAttribute="width" id="4lC-Il-iHc"/>
                             <constraint firstItem="HiA-WI-Uc8" firstAttribute="top" secondItem="q2n-Q9-hxR" secondAttribute="bottom" constant="50" id="Cqz-2x-DfB"/>
@@ -152,6 +158,9 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xVT-f5-Rxk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="profileView">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="7zU-vZ-axA" firstAttribute="leading" secondItem="xVT-f5-Rxk" secondAttribute="leading" constant="20" id="6bA-g8-sVp"/>
                             <constraint firstItem="tQq-Ni-q1D" firstAttribute="centerX" secondItem="fzC-0m-EId" secondAttribute="centerX" id="dk8-6j-wzd"/>

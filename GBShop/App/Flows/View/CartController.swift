@@ -80,22 +80,23 @@ class CartController: UITableViewController {
         basketService.payBasket(
             basketProducts: Cart.cart.basket(),
             userID: CurrentUser.shared.user?.id ?? 0) { [weak self] response in
-            guard let self = self else { return }
-            switch response.result {
-            case .success(let result):
-                if result.result == 1 {
-                    DispatchQueue.main.async {
-                        Cart.cart.clearCart()
-                        self.showOk(title: "Успешно", message: "Покупка совершена") {
-                            self.tabBarController?.selectedIndex = 1
+                guard let self = self else { return }
+                DispatchQueue.main.async {
+                    switch response.result {
+                    case .success(let result):
+                        
+                        if result.result == 1 {
+                            Cart.cart.clearCart()
+                            self.showOk(title: "Успешно", message: "Покупка совершена") {
+                                self.tabBarController?.selectedIndex = 1
+                            }
+                        } else {
+                            self.showOk(title: "Ошибка", message: result.errorMessage ?? "Какая-то ошибка")
                         }
+                    case .failure(let error):
+                        self.showOk(title: "Ошибка", message: error.localizedDescription)
                     }
-                } else {
-                    print(result.errorMessage ?? "Какая-то ошибка")
                 }
-            case .failure(let error):
-                print(error.localizedDescription)
             }
-        }
     }
 }

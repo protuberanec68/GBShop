@@ -21,8 +21,6 @@
 		4065715027CE96DD003897A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065714F27CE96DD003897A0 /* SceneDelegate.swift */; };
 		4065715A27CE96DE003897A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4065715927CE96DE003897A0 /* Assets.xcassets */; };
 		4065715D27CE96DE003897A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4065715B27CE96DE003897A0 /* LaunchScreen.storyboard */; };
-		4065716827CE96DE003897A0 /* GBShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065716727CE96DE003897A0 /* GBShopTests.swift */; };
-		4065717227CE96DE003897A0 /* GBShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065717127CE96DE003897A0 /* GBShopUITests.swift */; };
 		4065717427CE96DE003897A0 /* GBShopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065717327CE96DE003897A0 /* GBShopUITestsLaunchTests.swift */; };
 		407BF33627E3B82000C17642 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 407BF33527E3B82000C17642 /* Swinject */; };
 		407BF33C27E3D05300C17642 /* ContainerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407BF33B27E3D05300C17642 /* ContainerAssembly.swift */; };
@@ -51,6 +49,7 @@
 		40DBA12128147C200092E162 /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40DBA11F28147C200092E162 /* ButtonCell.xib */; };
 		40DBA124281481410092E162 /* ProductCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBA122281481410092E162 /* ProductCartCell.swift */; };
 		40DBA125281481410092E162 /* ProductCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40DBA123281481410092E162 /* ProductCartCell.xib */; };
+		40DBA1272815A1370092E162 /* AuthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DBA1262815A1370092E162 /* AuthUITests.swift */; };
 		40E09A9827E1192800804CAF /* RegisterRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E09A9727E1192800804CAF /* RegisterRequestFactory.swift */; };
 		40E09A9A27E11A8700804CAF /* AbstractResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E09A9927E11A8700804CAF /* AbstractResult.swift */; };
 		40E09A9E27E11B6F00804CAF /* ChangeDataRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E09A9D27E11B6F00804CAF /* ChangeDataRequestFactory.swift */; };
@@ -106,9 +105,7 @@
 		4065715C27CE96DE003897A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4065715E27CE96DE003897A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = GBShop/Environments/Info.plist; sourceTree = SOURCE_ROOT; };
 		4065716327CE96DE003897A0 /* GBShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GBShopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4065716727CE96DE003897A0 /* GBShopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopTests.swift; sourceTree = "<group>"; };
 		4065716D27CE96DE003897A0 /* GBShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GBShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4065717127CE96DE003897A0 /* GBShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopUITests.swift; sourceTree = "<group>"; };
 		4065717327CE96DE003897A0 /* GBShopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		407BF33B27E3D05300C17642 /* ContainerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerAssembly.swift; sourceTree = "<group>"; };
 		407BF33D27E3D31200C17642 /* RequestSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSession.swift; sourceTree = "<group>"; };
@@ -135,6 +132,7 @@
 		40DBA11F28147C200092E162 /* ButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
 		40DBA122281481410092E162 /* ProductCartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCartCell.swift; sourceTree = "<group>"; };
 		40DBA123281481410092E162 /* ProductCartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCartCell.xib; sourceTree = "<group>"; };
+		40DBA1262815A1370092E162 /* AuthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUITests.swift; sourceTree = "<group>"; };
 		40E09A9727E1192800804CAF /* RegisterRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequestFactory.swift; sourceTree = "<group>"; };
 		40E09A9927E11A8700804CAF /* AbstractResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractResult.swift; sourceTree = "<group>"; };
 		40E09A9D27E11B6F00804CAF /* ChangeDataRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDataRequestFactory.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 		4065716627CE96DE003897A0 /* GBShopTests */ = {
 			isa = PBXGroup;
 			children = (
-				4065716727CE96DE003897A0 /* GBShopTests.swift */,
 				40F43F4827EFB4210075D912 /* AuthTests.swift */,
 				4000252127F0808300163BE9 /* RegisterTests.swift */,
 				4000252327F0809800163BE9 /* ChangeDataTests.swift */,
@@ -232,7 +229,7 @@
 		4065717027CE96DE003897A0 /* GBShopUITests */ = {
 			isa = PBXGroup;
 			children = (
-				4065717127CE96DE003897A0 /* GBShopUITests.swift */,
+				40DBA1262815A1370092E162 /* AuthUITests.swift */,
 				4065717327CE96DE003897A0 /* GBShopUITestsLaunchTests.swift */,
 			);
 			path = GBShopUITests;
@@ -579,7 +576,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4065716827CE96DE003897A0 /* GBShopTests.swift in Sources */,
 				40CB769728033BD800E7EF8F /* BasketTests.swift in Sources */,
 				40F43F4927EFB4210075D912 /* AuthTests.swift in Sources */,
 				4000252227F0808300163BE9 /* RegisterTests.swift in Sources */,
@@ -594,7 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4065717227CE96DE003897A0 /* GBShopUITests.swift in Sources */,
+				40DBA1272815A1370092E162 /* AuthUITests.swift in Sources */,
 				4065717427CE96DE003897A0 /* GBShopUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
