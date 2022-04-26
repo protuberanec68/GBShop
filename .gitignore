@@ -123,6 +123,9 @@ iOSInjectionProject/
 ### Firebase ###
 GoogleService-Info.plist
 
+### Fastlane ###
+fastlane/
+Gemfile*
 
 ## Gcc Patch
 /*.gcno
