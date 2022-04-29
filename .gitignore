@@ -109,6 +109,8 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+#fastlane/README.md
+Gemfile*
 
 # Code Injection
 # After new code Injection tools there's a generated folder /iOSInjectionProject
@@ -123,9 +125,7 @@ iOSInjectionProject/
 ### Firebase ###
 GoogleService-Info.plist
 
-### Fastlane ###
-fastlane/
-Gemfile*
+
 
 ## Gcc Patch
 /*.gcno
