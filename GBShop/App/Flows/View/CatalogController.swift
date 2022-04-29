@@ -22,6 +22,7 @@ final class CatalogController: UITableViewController {
             }
         }
     }
+    var currentProduct: Product?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +68,17 @@ final class CatalogController: UITableViewController {
         30.0
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentProduct = products[indexPath.row]
+        performSegue(withIdentifier: "showProduct", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let productView = segue.destination as? ProductController,
+              let product = currentProduct
+        else { return }
+        productView.product = product
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

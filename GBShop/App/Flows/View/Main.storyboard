@@ -173,7 +173,7 @@
             </objects>
             <point key="canvasLocation" x="1600" y="-282"/>
         </scene>
-        <!--Каталог-->
+        <!--Catalog Controller-->
         <scene sceneID="y8e-SI-Hn3">
             <objects>
                 <tableViewController id="XNZ-L4-NNG" customClass="CatalogController" customModule="GBShop" customModuleProvider="target" sceneMemberID="viewController">
@@ -186,11 +186,33 @@
                             <outlet property="delegate" destination="XNZ-L4-NNG" id="A6i-4s-G3C"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Каталог" image="house.fill" catalog="system" id="Pja-tC-PQQ"/>
+                    <navigationItem key="navigationItem" id="Xd2-eR-2Ry"/>
+                    <connections>
+                        <segue destination="eqi-F1-GML" kind="show" identifier="showProduct" id="hqk-Bj-0iF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAY-OL-FIM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1600" y="425"/>
+            <point key="canvasLocation" x="2478" y="425"/>
+        </scene>
+        <!--Product Controller-->
+        <scene sceneID="ebc-K8-PM0">
+            <objects>
+                <tableViewController id="eqi-F1-GML" customClass="ProductController" customModule="GBShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="IuP-qA-In9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="eqi-F1-GML" id="xzG-wc-T8A"/>
+                            <outlet property="delegate" destination="eqi-F1-GML" id="HqR-Ra-CjV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="pkG-fi-8ri"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yh6-WJ-67o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3347.826086956522" y="424.55357142857139"/>
         </scene>
         <!--Register Controller-->
         <scene sceneID="rfU-dV-IZ3">
@@ -290,17 +312,37 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="KcP-Oc-mqc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MWQ-gd-Hzg">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="3Mt-vh-cnr" kind="relationship" relationship="viewControllers" id="XG6-xc-aBX"/>
-                        <segue destination="XNZ-L4-NNG" kind="relationship" relationship="viewControllers" id="Bd9-Vr-uhi"/>
+                        <segue destination="iqj-dQ-TkG" kind="relationship" relationship="viewControllers" id="Bd9-Vr-uhi"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LsC-bv-gW8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="786.95652173913049" y="50.892857142857139"/>
+        </scene>
+        <!--Каталог-->
+        <scene sceneID="xh9-UP-BIY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iqj-dQ-TkG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Каталог" image="house.fill" catalog="system" id="Pja-tC-PQQ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Slo-DI-pfl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XNZ-L4-NNG" kind="relationship" relationship="rootViewController" id="hHZ-lO-74l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oc5-mp-zn9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1600.0000000000002" y="424.55357142857139"/>
         </scene>
     </scenes>
     <resources>
