@@ -29,8 +29,7 @@ final class LoginController: UIViewController {
               !name.isEmpty,
               !password.isEmpty
         else {
-            ShowMessage().showOk(
-                sender: self,
+            self.showOk(
                 title: "Ошибка",
                 message: "Логин/пароль не заполнены")
             return
@@ -43,8 +42,7 @@ final class LoginController: UIViewController {
                     guard result.result == 1,
                           let user = result.user
                     else {
-                        ShowMessage().showOk(
-                            sender: self,
+                        self.showOk(
                             title: "Ошибка",
                             message: result.errorMessage ?? "Неизвестная ошибка")
                         self.passwordField.text = ""
@@ -54,8 +52,7 @@ final class LoginController: UIViewController {
                     self.passwordField.text = ""
                     self.performSegue(withIdentifier: "goMain", sender: nil)
                 case .failure(let error):
-                    ShowMessage().showOk(
-                        sender: self,
+                    self.showOk(
                         title: "Ошибка",
                         message: error.localizedDescription)
                 }

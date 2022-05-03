@@ -34,7 +34,7 @@ final class RegisterController: UIViewController {
               let card = cardField.text,
               let userBio = bioField.text
         else {
-            ShowMessage().showOk(sender: self, title: "Ошибка", message: "Что-то пошло не так")
+            self.showOk(title: "Ошибка", message: "Что-то пошло не так")
             return
         }
         let genderIndex = genderControl.selectedSegmentIndex
@@ -54,17 +54,16 @@ final class RegisterController: UIViewController {
                 switch response.result {
                 case .success(let result):
                     if result.result == 1 {
-                        ShowMessage().showOk(sender: self, title: "OK", message: "Вы зарегистрировались") {
+                        self.showOk(title: "OK", message: "Вы зарегистрировались") {
                             self.dismiss(animated: true)
                         }
                     } else {
-                        ShowMessage().showOk(
-                            sender: self,
+                        self.showOk(
                             title: "Error",
                             message: result.errorMessage ?? "Какая-то ошибка")
                     }
                 case .failure(let error):
-                    ShowMessage().showOk(sender: self, title: "Error", message: error.localizedDescription)
+                    self.showOk(title: "Error", message: error.localizedDescription)
                 }
             }
         }

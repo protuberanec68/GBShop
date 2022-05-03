@@ -34,13 +34,12 @@ final class UserDataController: UIViewController {
               let bioData = bioField.text,
               let curUser = CurrentUser.shared.user
         else {
-            ShowMessage().showOk(sender: self, title: "Ошибка", message: "Что-то пошло не так")
+            self.showOk(title: "Ошибка", message: "Что-то пошло не так")
             
             return
         }
         if name.isEmpty || password.isEmpty {
-            ShowMessage().showOk(
-                sender: self,
+            self.showOk(
                 title: "Ошибка",
                 message: "Поля логин и пароль должны быть заполнены")
             return
@@ -60,15 +59,14 @@ final class UserDataController: UIViewController {
                 switch response.result {
                 case .success(let result):
                     if result.result == 1 {
-                        ShowMessage().showOk(sender: self, title: "Успешно", message: "Данные изменены")
+                        self.showOk(title: "Успешно", message: "Данные изменены")
                     } else {
-                        ShowMessage().showOk(
-                            sender: self,
+                       self.showOk(
                             title: "Ошибка",
                             message: result.errorMessage ?? "Неизвестная ошибка")
                     }
                 case .failure(let error):
-                    ShowMessage().showOk(sender: self, title: "Ошибка", message: error.localizedDescription)
+                    self.showOk(title: "Ошибка", message: error.localizedDescription)
                 }
             }
         }
