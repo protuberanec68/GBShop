@@ -20,6 +20,11 @@ class ProductController: UITableViewController {
             UINib(nibName: "ButtonCell", bundle: nil), forCellReuseIdentifier: "buttonCell")
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        EventLogger(event: .openProduct)
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,6 +73,7 @@ class ProductController: UITableViewController {
             tableView.deselectRow(at: indexPath, animated: true)
         }
         if indexPath.row == 3 {
+            EventLogger(event: .addProduct, info: "id:\(String(product.idProduct))")
             Cart.cart.addProduct(product: product)
             showToast(message: "Товар добавлен в корзину", font: .systemFont(ofSize: 12.0))
         }

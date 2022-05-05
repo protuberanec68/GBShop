@@ -30,6 +30,11 @@ final class CatalogController: UITableViewController {
         fetchCatalog()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        EventLogger(event: .openCatalog)
+    }
+    
     private func fetchCatalog() {
         catalogService.getCatalogData(pageNumber: 1, idCategory: 1) { [weak self] response in
             guard let self = self else { return }
@@ -96,6 +101,7 @@ final class CatalogController: UITableViewController {
     
     private func addToCart(indexPath: IndexPath) {
         let product = products[indexPath.row]
+        EventLogger(event: .addProduct, info: "id:\(String(product.idProduct))")
         Cart.cart.addProduct(product: product)
         showToast(message: "Товар добавлен в корзину", font: .systemFont(ofSize: 12.0))
     }

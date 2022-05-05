@@ -87,6 +87,7 @@ class CartController: UITableViewController {
                         
                         if result.result == 1 {
                             Cart.cart.clearCart()
+                            EventLogger(event: .payBasket)
                             self.showOk(title: "Успешно", message: "Покупка совершена") {
                                 self.tabBarController?.selectedIndex = 1
                             }
