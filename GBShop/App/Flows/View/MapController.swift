@@ -13,6 +13,9 @@ class MapController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     var route: GMSPolyline?
     var routePath: GMSMutablePath?
+    var beginBackgroundTask: UIBackgroundTaskIdentifier?
+    
+    var timer: Timer?
     
     var locationManager: CLLocationManager!
     var currentLocation: CLLocationCoordinate2D? {
@@ -22,13 +25,16 @@ class MapController: UIViewController {
     //used to check that camera moved by user actions and to disable / enable automatic tracking of the camera for the current location
     var isCameraNeedAutoMove = true
     var isCameraMovedAutomatically = true
+    var isTracking = false
     
     let defaultLocation = CLLocationCoordinate2D(latitude: 59.939095, longitude: 30.315868)
     
+    // MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLocationManager()
         configureMap()
+        сonfigureBackground()
     }
     
     @IBAction func locationTapped(_ sender: Any) {
@@ -36,13 +42,108 @@ class MapController: UIViewController {
         isCameraMovedAutomatically = true
         mapView.animate(toLocation: currentLocation ?? defaultLocation)
     }
-    @IBAction func drawLineTapped(_ sender: Any) {
+    @IBAction func startNewTrackTapped(_ sender: Any) {
+        locationManager.allowsBackgroundLocationUpdates = true
         route?.map = nil
         route = GMSPolyline()
         routePath = GMSMutablePath()
         route?.strokeWidth = 2
         
         route?.map = mapView
+        isTracking = true
+        showToast(message: "Запись нового трека начата", font: .systemFont(ofSize: 12.0))
+    }
+    
+    @IBAction func stopTrackTapped(_ sender: Any) {
+        stopTracking()
+    }
+    
+    private func stopTracking() {
+        if isTracking {
+            locationManager.allowsBackgroundLocationUpdates = false
+            guard let routePath = routePath else { return }
+            let count = routePath.count()
+            var locations: [RealmLocation] = []
+            
+            for index in (0 ..< count) {
+                let coordinate = routePath.coordinate(at: index)
+                locations.append(RealmLocation(location: coordinate))
+            }
+            do {
+                let oldPath = try RealmService.load(typeOf: RealmLocation.self)
+                try RealmService.delete(object: oldPath)
+                try RealmService.save(items: locations)
+            } catch {
+                print(error.localizedDescription)
+                return
+            }
+            
+            showToast(message: "Запись трека остановлена", font: .systemFont(ofSize: 12.0))
+            isTracking = false
+        }
+        route?.map = nil
+        route = nil
+        self.routePath = nil
+    }
+    
+    @IBAction func showLastTrackTapped(_ sender: Any) {
+        if isTracking {
+            showOk(
+                title: "Идет запись трека",
+                message: "Сбросить текущую запись трека и показать последнюю запись?",
+                cancelButtonNeeded: true) { [weak self] in
+                    guard let self = self else { return }
+                    self.stopTracking()
+                    self.showLastTrack()
+                }
+            return
+        } else {
+            showLastTrack()
+        }
+    }
+    
+    private func showLastTrack() {
+        route?.map = nil
+        route = GMSPolyline()
+        routePath = GMSMutablePath()
+        do {
+            let locationsResult = try RealmService.load(typeOf: RealmLocation.self)
+            locationsResult.forEach {
+                routePath?.add(CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude))
+            }
+        } catch {
+            print(error.localizedDescription)
+            return
+        }
+        
+        route?.strokeWidth = 2
+        route?.map = mapView
+        route?.path = routePath
+        
+        let pathBounds = GMSCoordinateBounds(path: routePath!)
+        let cameraUpdate = GMSCameraUpdate.fit(pathBounds, withPadding: 10.0)
+        mapView.animate(with: cameraUpdate)
+        
+        showToast(message: "Последний трек", font: .systemFont(ofSize: 12.0))
+    }
+    
+    // MARK: Configure baskground
+    func сonfigureBackground() {
+        NotificationCenter.default.addObserver(
+            forName: UIApplication.didEnterBackgroundNotification,
+            object: nil,
+            queue: OperationQueue.main) { [weak self] _ in
+                guard let self = self else { return }
+                self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            }
+        
+        NotificationCenter.default.addObserver(
+            forName: UIApplication.willEnterForegroundNotification,
+            object: nil,
+            queue: OperationQueue.main) { [weak self] _ in
+                guard let self = self else { return }
+                self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+            }
     }
 }
 
@@ -50,7 +151,10 @@ class MapController: UIViewController {
 extension MapController: CLLocationManagerDelegate {
     private func configureLocationManager() {
         locationManager = CLLocationManager()
-        locationManager.requestWhenInUseAuthorization()
+        locationManager.allowsBackgroundLocationUpdates = false
+        locationManager.pausesLocationUpdatesAutomatically = false
+        locationManager.startMonitoringSignificantLocationChanges()
+        locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
     }
     
@@ -60,8 +164,10 @@ extension MapController: CLLocationManagerDelegate {
             isCameraMovedAutomatically = true
             mapView.animate(toLocation: location.coordinate)
         }
-        routePath?.add(location.coordinate)
-        route?.path = routePath
+        if isTracking {
+            routePath?.add(location.coordinate)
+            route?.path = routePath
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

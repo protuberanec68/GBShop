@@ -6,6 +6,7 @@ target 'GBShop' do
   use_frameworks!
 
   pod 'GoogleMaps', '6.2.1'
+  pod 'RealmSwift', '~>10'
 
   # Pods for GBShop
 

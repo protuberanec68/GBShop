@@ -40,6 +40,8 @@
 		409A405E283044820042474D /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409A405D283044820042474D /* ApiKey.swift */; };
 		409A405F28304EFE0042474D /* Pods_GBShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CB89C4BC2ADD2E07A83547 /* Pods_GBShop.framework */; };
 		409A40632830531D0042474D /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409A40622830531D0042474D /* MapController.swift */; };
+		40C828DA283A3CAA00FD928F /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C828D9283A3CAA00FD928F /* RealmService.swift */; };
+		40C828DC283A679400FD928F /* TrackRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C828DB283A679400FD928F /* TrackRealm.swift */; };
 		40CB768D2803258E00E7EF8F /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CB768C2803258E00E7EF8F /* Cart.swift */; };
 		40CB768F280329CF00E7EF8F /* CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CB768E280329CF00E7EF8F /* CartTests.swift */; };
 		40CB7693280338BF00E7EF8F /* BasketRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CB7692280338BF00E7EF8F /* BasketRequestFactory.swift */; };
@@ -131,6 +133,8 @@
 		408DA73927DEA1AA00B18B4D /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		409A405D283044820042474D /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		409A40622830531D0042474D /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		40C828D9283A3CAA00FD928F /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		40C828DB283A679400FD928F /* TrackRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRealm.swift; sourceTree = "<group>"; };
 		40CB768C2803258E00E7EF8F /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		40CB768E280329CF00E7EF8F /* CartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTests.swift; sourceTree = "<group>"; };
 		40CB7692280338BF00E7EF8F /* BasketRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketRequestFactory.swift; sourceTree = "<group>"; };
@@ -276,6 +280,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		40C828D8283A3C9200FD928F /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				40C828D9283A3CAA00FD928F /* RealmService.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		40E8545527CEA44D0079C09D /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +363,7 @@
 				4000252827F0C99800163BE9 /* Product.swift */,
 				40ECB1AB27F4DDDD009320BD /* ReviewsResult.swift */,
 				40CB768C2803258E00E7EF8F /* Cart.swift */,
+				40C828DB283A679400FD928F /* TrackRealm.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -373,6 +386,7 @@
 		40F43F4727EFB3FA0075D912 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				40C828D8283A3C9200FD928F /* Database */,
 				408DA72527DE9DC900B18B4D /* Network */,
 				408DA73927DEA1AA00B18B4D /* RequestFactory.swift */,
 				408DA73527DEA16100B18B4D /* AuthRequestFactory.swift */,
@@ -429,6 +443,7 @@
 				40ECB1A627F4D36E009320BD /* SwiftLint */,
 				40DBA1312815E04C0092E162 /* ShellScript */,
 				D1C3968571E79C04ACBA13E5 /* [CP] Copy Pods Resources */,
+				15CE83113B656298334DC3A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -472,6 +487,7 @@
 				4065716A27CE96DE003897A0 /* Frameworks */,
 				4065716B27CE96DE003897A0 /* Resources */,
 				A97B053C5910DE3D92C37500 /* [CP] Copy Pods Resources */,
+				0BFC50E19C1C9C7EBB6D8DA4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -564,6 +580,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0BFC50E19C1C9C7EBB6D8DA4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBShop-GBShopUITests/Pods-GBShop-GBShopUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBShop-GBShopUITests/Pods-GBShop-GBShopUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GBShop-GBShopUITests/Pods-GBShop-GBShopUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		15CE83113B656298334DC3A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBShop/Pods-GBShop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBShop/Pods-GBShop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GBShop/Pods-GBShop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		40DBA1312815E04C0092E162 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -725,6 +775,7 @@
 				408DA72F27DEA05F00B18B4D /* RequestRouter.swift in Sources */,
 				40DBA124281481410092E162 /* ProductCartCell.swift in Sources */,
 				409A40632830531D0042474D /* MapController.swift in Sources */,
+				40C828DC283A679400FD928F /* TrackRealm.swift in Sources */,
 				402FF7CC280BED25009BC905 /* ProductCell.swift in Sources */,
 				4000252D27F0D1FF00163BE9 /* CatalogDataResult.swift in Sources */,
 				4065714E27CE96DD003897A0 /* AppDelegate.swift in Sources */,
@@ -753,6 +804,7 @@
 				40DBA12028147C200092E162 /* ButtonCell.swift in Sources */,
 				407BF33C27E3D05300C17642 /* ContainerAssembly.swift in Sources */,
 				408DA72D27DEA02B00B18B4D /* AbstractRequestFactory.swift in Sources */,
+				40C828DA283A3CAA00FD928F /* RealmService.swift in Sources */,
 				408DA72927DE9E3B00B18B4D /* ErrorParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -939,6 +991,7 @@
 				DEVELOPMENT_TEAM = LKF6A6MC84;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GBShop/Environments/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "For Google Maps";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -970,6 +1023,7 @@
 				DEVELOPMENT_TEAM = LKF6A6MC84;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GBShop/Environments/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "For Google Maps";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
