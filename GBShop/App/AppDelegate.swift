@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import CoreData
 import Firebase
+import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
             FirebaseApp.configure()
+            GMSServices.provideAPIKey(ApiKey.shared.apiKey)
             return true
         }
 
