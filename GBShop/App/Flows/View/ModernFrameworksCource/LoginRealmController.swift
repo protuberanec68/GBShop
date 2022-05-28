@@ -1,0 +1,49 @@
+//
+//  LoginRealmController.swift
+//  GBShop
+//
+//  Created by Игорь Андрианов on 28.05.2022.
+//
+
+import UIKit
+
+class LoginRealmController: UIViewController {
+
+    @IBOutlet weak var loginField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    var onLogin: (() -> Void)?
+    var onRegister: (() -> Void)?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBAction func loginTapped(_ sender: Any) {
+        guard let login = loginField.text,
+              let users = try? RealmService.load(typeOf: UserRealm.self)
+            .filter(NSPredicate(format: "login = %@", login)),
+              let user = users.last,
+              login == user.login
+        else {
+            print("wrong login")
+            return
+        }
+        
+        guard let password = passwordField.text,
+              password == user.password
+        else {
+            print("wrong password")
+            return
+        }
+        
+        print("OK")
+        UserDefaults.standard.set(true, forKey: "isLogin")
+        onLogin?()
+    }
+    
+    @IBAction func registerTapped(_ sender: Any) {
+        onRegister?()
+    }
+
+}
