@@ -45,6 +45,7 @@
 		409A405E283044820042474D /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409A405D283044820042474D /* ApiKey.swift */; };
 		409A405F28304EFE0042474D /* Pods_GBShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CB89C4BC2ADD2E07A83547 /* Pods_GBShop.framework */; };
 		409A40632830531D0042474D /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409A40622830531D0042474D /* MapController.swift */; };
+		40A1FC6528434BB8002A27A5 /* ServerTrustPolicyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1FC6428434BB8002A27A5 /* ServerTrustPolicyManager.swift */; };
 		40C828DA283A3CAA00FD928F /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C828D9283A3CAA00FD928F /* RealmService.swift */; };
 		40C828DC283A679400FD928F /* TrackRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C828DB283A679400FD928F /* TrackRealm.swift */; };
 		40C828E02841781400FD928F /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C828DF2841781400FD928F /* UserRealm.swift */; };
@@ -146,6 +147,7 @@
 		408DA73927DEA1AA00B18B4D /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		409A405D283044820042474D /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		409A40622830531D0042474D /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		40A1FC6428434BB8002A27A5 /* ServerTrustPolicyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicyManager.swift; sourceTree = "<group>"; };
 		40C828D9283A3CAA00FD928F /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		40C828DB283A679400FD928F /* TrackRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRealm.swift; sourceTree = "<group>"; };
 		40C828DF2841781400FD928F /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 		408DA72527DE9DC900B18B4D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				40A1FC6328434B89002A27A5 /* ExampleServerTrustPolicyManager */,
 				408DA72627DE9E0700B18B4D /* AbstractErrorParser.swift */,
 				408DA72827DE9E3B00B18B4D /* ErrorParser.swift */,
 				408DA72A27DE9EAA00B18B4D /* DataRequest.swift */,
@@ -305,6 +308,14 @@
 				40F2382C2807561F001C72FE /* BaseURL.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		40A1FC6328434B89002A27A5 /* ExampleServerTrustPolicyManager */ = {
+			isa = PBXGroup;
+			children = (
+				40A1FC6428434BB8002A27A5 /* ServerTrustPolicyManager.swift */,
+			);
+			path = ExampleServerTrustPolicyManager;
 			sourceTree = "<group>";
 		};
 		40C828D8283A3C9200FD928F /* Database */ = {
@@ -851,6 +862,7 @@
 				40DBA11B2814797B0092E162 /* ViewControllerExtension.swift in Sources */,
 				40ECB1AC27F4DDDD009320BD /* ReviewsResult.swift in Sources */,
 				40F2382F28077BE8001C72FE /* Basket.swift in Sources */,
+				40A1FC6528434BB8002A27A5 /* ServerTrustPolicyManager.swift in Sources */,
 				407BF33E27E3D31200C17642 /* RequestSession.swift in Sources */,
 				40E09A9827E1192800804CAF /* RegisterRequestFactory.swift in Sources */,
 				40ECB1AA27F4DD32009320BD /* Review.swift in Sources */,
