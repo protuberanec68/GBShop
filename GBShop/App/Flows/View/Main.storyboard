@@ -254,22 +254,47 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9e-qw-Zge">
+                                <rect key="frame" x="251.5" y="108" width="152.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Начать новый трек"/>
+                                <connections>
+                                    <action selector="startNewTrackTapped:" destination="ZFh-AN-FKv" eventType="touchUpInside" id="rUP-jS-l3b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IE-me-hF1">
+                                <rect key="frame" x="275" y="159" width="129" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Закончить трек"/>
+                                <connections>
+                                    <action selector="stopTrackTapped:" destination="ZFh-AN-FKv" eventType="touchUpInside" id="CYY-IB-vtb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uef-E2-5UC">
+                                <rect key="frame" x="144.5" y="762" width="259.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Отобразить предыдущий маршрут"/>
+                                <connections>
+                                    <action selector="showLastTrackTapped:" destination="ZFh-AN-FKv" eventType="touchUpInside" id="sBh-hJ-K9u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fTK-wJ-CGA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="R9e-qw-Zge" firstAttribute="trailing" secondItem="fTK-wJ-CGA" secondAttribute="trailing" constant="-10" id="4IX-QI-3AJ"/>
                             <constraint firstItem="t6H-o4-xI0" firstAttribute="top" secondItem="fTK-wJ-CGA" secondAttribute="top" id="Aay-0l-nxu"/>
+                            <constraint firstItem="uef-E2-5UC" firstAttribute="bottom" secondItem="t6H-o4-xI0" secondAttribute="bottom" constant="-20" id="NGW-eb-Qhi"/>
+                            <constraint firstItem="R9e-qw-Zge" firstAttribute="top" secondItem="fTK-wJ-CGA" secondAttribute="top" constant="20" id="VOg-wc-s8d"/>
+                            <constraint firstItem="0IE-me-hF1" firstAttribute="top" secondItem="R9e-qw-Zge" secondAttribute="bottom" constant="20" id="ff0-uY-Ihc"/>
+                            <constraint firstItem="uef-E2-5UC" firstAttribute="trailing" secondItem="fTK-wJ-CGA" secondAttribute="trailing" constant="-10" id="mY9-C7-dCJ"/>
                             <constraint firstItem="fTK-wJ-CGA" firstAttribute="bottom" secondItem="t6H-o4-xI0" secondAttribute="bottom" id="oi0-z3-n5v"/>
                             <constraint firstItem="fTK-wJ-CGA" firstAttribute="trailing" secondItem="t6H-o4-xI0" secondAttribute="trailing" id="rQb-xF-Hq6"/>
+                            <constraint firstItem="0IE-me-hF1" firstAttribute="trailing" secondItem="fTK-wJ-CGA" secondAttribute="trailing" constant="-10" id="wtV-FL-HaH"/>
                             <constraint firstItem="t6H-o4-xI0" firstAttribute="leading" secondItem="fTK-wJ-CGA" secondAttribute="leading" id="xUp-Fn-C1T"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EqN-pY-BGf">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="hand.draw.fill" catalog="system" id="KOS-hy-M3i">
-                            <connections>
-                                <action selector="drawLineTapped:" destination="ZFh-AN-FKv" id="hgJ-jP-6b8"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="location.circle.fill" catalog="system" id="U9a-HN-YwJ">
                             <connections>
                                 <action selector="locationTapped:" destination="ZFh-AN-FKv" id="D7f-u0-p0B"/>
@@ -438,7 +463,6 @@
     </scenes>
     <resources>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
-        <image name="hand.draw.fill" catalog="system" width="128" height="109"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="location.circle.fill" catalog="system" width="128" height="121"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>

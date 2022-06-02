@@ -42,12 +42,17 @@ extension UIViewController {
     func showOk(
         title: String,
         message: String,
+        cancelButtonNeeded: Bool = false,
         actionAfterTapOK: @escaping (() -> Void) = {}) {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .destructive) {_ in
                 actionAfterTapOK()
             }
             alert.addAction(action)
+            if cancelButtonNeeded {
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+                alert.addAction(cancelAction)
+            }
             self.present(alert, animated: true)
         }
 }
