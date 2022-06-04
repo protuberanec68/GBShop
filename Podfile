@@ -7,6 +7,8 @@ target 'GBShop' do
 
   pod 'GoogleMaps', '6.2.1'
   pod 'RealmSwift', '~>10'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
   # Pods for GBShop
 

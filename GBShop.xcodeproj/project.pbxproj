@@ -23,6 +23,7 @@
 		403987802842C17C00119082 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4039877F2842C17C00119082 /* LoginCoordinator.swift */; };
 		403987822842C19200119082 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403987812842C19200119082 /* MainCoordinator.swift */; };
 		403987862842D03C00119082 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403987852842D03C00119082 /* MainTabBarController.swift */; };
+		404696EC284BB341008C91E7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404696EB284BB341008C91E7 /* LocationManager.swift */; };
 		4065714E27CE96DD003897A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065714D27CE96DD003897A0 /* AppDelegate.swift */; };
 		4065715027CE96DD003897A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4065714F27CE96DD003897A0 /* SceneDelegate.swift */; };
 		4065715A27CE96DE003897A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4065715927CE96DE003897A0 /* Assets.xcassets */; };
@@ -124,6 +125,7 @@
 		4039877F2842C17C00119082 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		403987812842C19200119082 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		403987852842D03C00119082 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		404696EB284BB341008C91E7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4065714A27CE96DD003897A0 /* GBShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4065714D27CE96DD003897A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4065714F27CE96DD003897A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -236,6 +238,14 @@
 				403987812842C19200119082 /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		404696EA284BB330008C91E7 /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				404696EB284BB341008C91E7 /* LocationManager.swift */,
+			);
+			path = LocationManager;
 			sourceTree = "<group>";
 		};
 		4065714127CE96DD003897A0 = {
@@ -445,6 +455,7 @@
 		40F43F4727EFB3FA0075D912 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				404696EA284BB330008C91E7 /* LocationManager */,
 				40C828D8283A3C9200FD928F /* Database */,
 				408DA72527DE9DC900B18B4D /* Network */,
 				408DA73927DEA1AA00B18B4D /* RequestFactory.swift */,
@@ -823,6 +834,7 @@
 				40F23835280AFBE0001C72FE /* RegisterController.swift in Sources */,
 				408DA72727DE9E0700B18B4D /* AbstractErrorParser.swift in Sources */,
 				40F23837280AFBFA001C72FE /* UserDataController.swift in Sources */,
+				404696EC284BB341008C91E7 /* LocationManager.swift in Sources */,
 				403987802842C17C00119082 /* LoginCoordinator.swift in Sources */,
 				40F23839280B0EB7001C72FE /* CurrentUser.swift in Sources */,
 				40CB768D2803258E00E7EF8F /* Cart.swift in Sources */,
