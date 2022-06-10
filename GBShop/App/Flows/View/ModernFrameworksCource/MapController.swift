@@ -10,6 +10,8 @@ import GoogleMaps
 
 class MapController: UIViewController {
 
+    var onLogout: (() -> Void)?
+    
     @IBOutlet weak var mapView: GMSMapView!
     var route: GMSPolyline?
     var routePath: GMSMutablePath?
@@ -35,6 +37,10 @@ class MapController: UIViewController {
         configureLocationManager()
         configureMap()
         сonfigureBackground()
+    }
+    @IBAction func logoutTapped(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "isLogin")
+        onLogout?()
     }
     
     @IBAction func locationTapped(_ sender: Any) {
