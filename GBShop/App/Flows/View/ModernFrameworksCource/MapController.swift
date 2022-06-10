@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleMaps
+import RxSwift
 
 class MapController: UIViewController {
 
@@ -19,10 +20,11 @@ class MapController: UIViewController {
     
     var timer: Timer?
     
-    var locationManager: CLLocationManager!
+    let locationManager = LocationManager.instance
     var currentLocation: CLLocationCoordinate2D? {
-        locationManager.location?.coordinate
+        locationManager.locationManager.location?.coordinate
     }
+    var locationEventHandler: Disposable?
     
 //    used to check that camera moved by user actions and to disable / enable
 //    automatic tracking of the camera for the current location
@@ -35,12 +37,13 @@ class MapController: UIViewController {
     // MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureLocationManager()
         configureMap()
         сonfigureBackground()
+        configureLocationManager()
     }
     @IBAction func logoutTapped(_ sender: Any) {
         UserDefaults.standard.set(false, forKey: "isLogin")
+        locationEventHandler?.dispose()
         onLogout?()
     }
     
@@ -50,7 +53,7 @@ class MapController: UIViewController {
         mapView.animate(toLocation: currentLocation ?? defaultLocation)
     }
     @IBAction func startNewTrackTapped(_ sender: Any) {
-        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.locationManager.allowsBackgroundLocationUpdates = true
         route?.map = nil
         route = GMSPolyline()
         routePath = GMSMutablePath()
@@ -67,7 +70,7 @@ class MapController: UIViewController {
     
     private func stopTracking() {
         if isTracking {
-            locationManager.allowsBackgroundLocationUpdates = false
+            locationManager.locationManager.allowsBackgroundLocationUpdates = false
             guard let routePath = routePath else { return }
             let count = routePath.count()
             var locations: [RealmLocation] = []
@@ -110,6 +113,7 @@ class MapController: UIViewController {
     }
     
     private func showLastTrack() {
+        isCameraNeedAutoMove = false
         route?.map = nil
         route = GMSPolyline()
         routePath = GMSMutablePath()
@@ -141,7 +145,7 @@ class MapController: UIViewController {
             object: nil,
             queue: OperationQueue.main) { [weak self] _ in
                 guard let self = self else { return }
-                self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+                self.locationManager.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             }
         
         NotificationCenter.default.addObserver(
@@ -149,36 +153,26 @@ class MapController: UIViewController {
             object: nil,
             queue: OperationQueue.main) { [weak self] _ in
                 guard let self = self else { return }
-                self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+                self.locationManager.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             }
     }
-}
-
-// MARK: LocationManager Delegate
-extension MapController: CLLocationManagerDelegate {
+    
     private func configureLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager.allowsBackgroundLocationUpdates = false
-        locationManager.pausesLocationUpdatesAutomatically = false
-        locationManager.startMonitoringSignificantLocationChanges()
-        locationManager.requestAlwaysAuthorization()
-        locationManager.delegate = self
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        if isCameraNeedAutoMove {
-            isCameraMovedAutomatically = true
-            mapView.animate(toLocation: location.coordinate)
+        locationEventHandler = locationManager.location.subscribe { event in
+            print(event)
+            guard let location = event.element,
+                  let coordinate = location?.coordinate
+            else { return }
+            if self.isCameraNeedAutoMove {
+                self.isCameraMovedAutomatically = true
+                self.mapView.animate(toLocation: coordinate)
+            }
+            if self.isTracking {
+                self.routePath?.add(coordinate)
+                self.route?.path = self.routePath
+            }
         }
-        if isTracking {
-            routePath?.add(location.coordinate)
-            route?.path = routePath
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
+        locationManager.locationManager.startUpdatingLocation()
     }
 }
 
@@ -187,7 +181,6 @@ extension MapController: GMSMapViewDelegate {
     private func configureMap() {
         mapView.delegate = self
         mapView.isMyLocationEnabled = true
-        locationManager.startUpdatingLocation()
         let camera = GMSCameraPosition.camera(withTarget: currentLocation ?? defaultLocation, zoom: 10.0)
         mapView.camera = camera
     }

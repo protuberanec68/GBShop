@@ -6,17 +6,35 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class LoginRealmController: UIViewController {
 
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     var onLogin: (() -> Void)?
     var onRegister: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        сonfigureFieldsObserver()
+    }
+    
+    private func сonfigureFieldsObserver() {
+        Observable
+            .combineLatest(loginField.rx.text, passwordField.rx.text)
+            .map { login, password in
+                guard let login = login,
+                      let password = password
+                else { return false }
+                return (!(login.isEmpty) && password.count > 3)
+            }
+            .bind { [weak loginButton] isCorrectInput in
+                loginButton?.isEnabled = isCorrectInput
+            }
     }
     
     @IBAction func loginTapped(_ sender: Any) {
