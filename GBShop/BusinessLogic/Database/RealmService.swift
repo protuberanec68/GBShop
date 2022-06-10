@@ -11,7 +11,7 @@ import RealmSwift
 final class RealmService {
     static let deleteIfMigration = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
     
-    static func save<T:Object>(
+    static func save<T: Object>(
         items: [T],
         configuration: Realm.Configuration = deleteIfMigration,
         update: Realm.UpdatePolicy = .modified) throws {
@@ -24,12 +24,12 @@ final class RealmService {
             }
         }
     
-    static func load<T:Object>(typeOf: T.Type) throws -> Results<T> {
+    static func load<T: Object>(typeOf: T.Type) throws -> Results<T> {
         let realm = try Realm()
         return realm.objects(T.self)
     }
     
-    static func delete<T:Object>(object: Results<T>) throws {
+    static func delete<T: Object>(object: Results<T>) throws {
         let realm = try Realm()
         try realm.write {
             realm.delete(object)

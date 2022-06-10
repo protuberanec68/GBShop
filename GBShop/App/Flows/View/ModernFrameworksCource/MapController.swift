@@ -24,7 +24,8 @@ class MapController: UIViewController {
         locationManager.location?.coordinate
     }
     
-    //used to check that camera moved by user actions and to disable / enable automatic tracking of the camera for the current location
+//    used to check that camera moved by user actions and to disable / enable
+//    automatic tracking of the camera for the current location
     var isCameraNeedAutoMove = true
     var isCameraMovedAutomatically = true
     var isTracking = false
