@@ -16,6 +16,8 @@ class MapController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     var route: GMSPolyline?
     var routePath: GMSMutablePath?
+    var marker: GMSMarker?
+    
     var beginBackgroundTask: UIBackgroundTaskIdentifier?
     
     var timer: Timer?
@@ -25,6 +27,14 @@ class MapController: UIViewController {
         locationManager.locationManager.location?.coordinate
     }
     var locationEventHandler: Disposable?
+    
+    var imagePC: UIImagePickerController!
+    let imageName = "markerPick.jpg"
+    lazy var imagePath: URL = {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0].appendingPathComponent(imageName)
+    }()
+    var markerImage: UIImage?
     
 //    used to check that camera moved by user actions and to disable / enable
 //    automatic tracking of the camera for the current location
@@ -37,10 +47,13 @@ class MapController: UIViewController {
     // MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
+        markerImage = UIImage(contentsOfFile: imagePath.absoluteString)
         configureMap()
         сonfigureBackground()
         configureLocationManager()
+        configureImagePC()
     }
+    
     @IBAction func logoutTapped(_ sender: Any) {
         UserDefaults.standard.set(false, forKey: "isLogin")
         locationEventHandler?.dispose()
@@ -66,6 +79,25 @@ class MapController: UIViewController {
     
     @IBAction func stopTrackTapped(_ sender: Any) {
         stopTracking()
+    }
+    @IBAction func personTapped(_ sender: Any) {
+        showImagePC()
+    }
+    
+    private func configureImagePC() {
+        imagePC = UIImagePickerController()
+        imagePC.sourceType = .camera
+        imagePC.cameraCaptureMode = .photo
+        imagePC.cameraDevice = .front
+        imagePC.showsCameraControls = true
+        imagePC.isNavigationBarHidden = false
+        imagePC.isToolbarHidden = false
+        imagePC.delegate = self
+    }
+    
+    private func showImagePC() {
+        
+        present(imagePC, animated: true)
     }
     
     private func stopTracking() {
@@ -158,11 +190,14 @@ class MapController: UIViewController {
     }
     
     private func configureLocationManager() {
-        locationEventHandler = locationManager.location.subscribe { event in
-            print(event)
-            guard let location = event.element,
+        locationEventHandler = locationManager.location.subscribe { [weak self] event in
+            guard let self = self,
+                  let location = event.element,
                   let coordinate = location?.coordinate
             else { return }
+            
+            self.setMarker(with: self.markerImage, to: coordinate)
+            
             if self.isCameraNeedAutoMove {
                 self.isCameraMovedAutomatically = true
                 self.mapView.animate(toLocation: coordinate)
@@ -180,7 +215,7 @@ class MapController: UIViewController {
 extension MapController: GMSMapViewDelegate {
     private func configureMap() {
         mapView.delegate = self
-        mapView.isMyLocationEnabled = true
+//        mapView.isMyLocationEnabled = true
         let camera = GMSCameraPosition.camera(withTarget: currentLocation ?? defaultLocation, zoom: 10.0)
         mapView.camera = camera
     }
@@ -191,4 +226,34 @@ extension MapController: GMSMapViewDelegate {
         }
         isCameraMovedAutomatically = false
     }
+    
+    private func setMarker(with image: UIImage?, to coordinate: CLLocationCoordinate2D) {
+        marker?.map = nil
+        marker = nil
+        marker = GMSMarker(position: coordinate)
+        marker?.icon = image
+        marker?.map = mapView
+    }
+}
+
+extension MapController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+            guard let image = info[.originalImage] as? UIImage
+            else {
+                picker.dismiss(animated: true)
+                return
+            }
+            let smallImage = image.resized(to: 50)
+            markerImage = smallImage
+            if let jpegData = smallImage.jpegData(compressionQuality: 0.8) {
+                try? jpegData.write(to: imagePath)
+            }
+            
+            guard let location = locationManager.locationManager.location else { return }
+            setMarker(with: markerImage, to: location.coordinate)
+            
+            picker.dismiss(animated: true)
+        }
 }
