@@ -300,11 +300,18 @@
                                 <action selector="logoutTapped:" destination="ZFh-AN-FKv" id="V4F-3H-ebH"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="location.circle.fill" catalog="system" id="U9a-HN-YwJ">
-                            <connections>
-                                <action selector="locationTapped:" destination="ZFh-AN-FKv" id="D7f-u0-p0B"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="location.circle.fill" catalog="system" id="U9a-HN-YwJ">
+                                <connections>
+                                    <action selector="locationTapped:" destination="ZFh-AN-FKv" id="D7f-u0-p0B"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="person.fill" catalog="system" id="Bka-5n-MYO">
+                                <connections>
+                                    <action selector="personTapped:" destination="ZFh-AN-FKv" id="uUA-LH-czS"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="t6H-o4-xI0" id="Rck-yL-mYi"/>
@@ -312,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIu-Zy-dfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1697.1014492753625" y="758.70535714285711"/>
+            <point key="canvasLocation" x="1600" y="759"/>
         </scene>
         <!--Register Controller-->
         <scene sceneID="rfU-dV-IZ3">

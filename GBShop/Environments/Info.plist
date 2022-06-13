@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>For place your photo on the map</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>For google maps use</string>
 	<key>CFBundleIdentifier</key>
